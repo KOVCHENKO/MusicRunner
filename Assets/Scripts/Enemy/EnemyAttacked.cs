@@ -15,8 +15,8 @@ namespace Enemy
                 {
                     Instantiate(explosion, transform.position, transform.rotation);
                 }
-            
-                DestroyObject(this.gameObject);
+
+                Object.Destroy(this.gameObject);
             }
         }
     }

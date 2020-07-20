@@ -8,7 +8,7 @@ namespace Util
         public bool detachChildren = false;
 
         void Awake () {
-            Invoke ("DestroyNow", timeOut);
+            Invoke (nameof(DestroyNow), timeOut);
         }
 
         void DestroyNow ()
