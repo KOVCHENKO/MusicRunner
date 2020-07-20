@@ -60,6 +60,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\CameraFollowController.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraMoveController.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyAttacked.cs" />
      <Compile Include="Assets\Scripts\Picker\PickerController.cs" />
      <Compile Include="Assets\Scripts\UI\StringButtonController.cs" />
  <Reference Include="Unity.Timeline.Editor">
