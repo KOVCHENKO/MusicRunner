@@ -1,22 +1,23 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public class EnemyAttacked : MonoBehaviour
+namespace Enemy
 {
-    public GameObject explosion;
-    
-    void OnTriggerEnter2D(Collider2D other)
+    public class EnemyAttacked : MonoBehaviour
     {
-        if (other.gameObject.tag == "Player") {
-            Debug.Log("Enemy note has been attacked");
+        public GameObject explosion;
+    
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Player")) {
+                Debug.Log("Enemy note has been attacked");
 
-            if (explosion)
-            {
-                Instantiate(explosion, transform.position, transform.rotation);
-            }
+                if (explosion)
+                {
+                    Instantiate(explosion, transform.position, transform.rotation);
+                }
             
-            // DestroyObject(this.gameObject);
+                DestroyObject(this.gameObject);
+            }
         }
     }
 }

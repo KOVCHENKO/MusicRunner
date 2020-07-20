@@ -1,36 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class StringButtonController : MonoBehaviour
+namespace UI
 {
-    public GameObject picker;
-
-    public void changeStringForPicker(int posNumber)
+    public class StringButtonController : MonoBehaviour
     {
-        picker = GameObject.FindGameObjectWithTag("Player");
-        
-        Debug.Log("change picker y position");
-        float pickerYCoord = 0f;
-        switch (posNumber)
+        public GameObject picker;
+
+        public void changeStringForPicker(int posNumber)
         {
-            case 1:
-                pickerYCoord = 4.2f;
-                break;
-            case 2:
-                pickerYCoord = 3.2f;
-                break;
-            case 3:
-                pickerYCoord = 2.2f;
-                break;
-            case 4:
-                pickerYCoord = 1.2f;
-                break;
-            case 5:
-                pickerYCoord = 0.2f;
-                break;
-        }
+            picker = GameObject.FindGameObjectWithTag("Player");
         
-        picker.transform.position = new Vector2(picker.transform.position.x, pickerYCoord);
+            Debug.Log("change picker y position");
+            float pickerYCoord = 0f;
+            switch (posNumber)
+            {
+                case 1:
+                    pickerYCoord = 4.2f;
+                    break;
+                case 2:
+                    pickerYCoord = 3.2f;
+                    break;
+                case 3:
+                    pickerYCoord = 2.2f;
+                    break;
+                case 4:
+                    pickerYCoord = 1.2f;
+                    break;
+                case 5:
+                    pickerYCoord = 0.2f;
+                    break;
+            }
+        
+            picker.transform.position = new Vector2(picker.transform.position.x, pickerYCoord);
+        }
     }
 }
