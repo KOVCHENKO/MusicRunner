@@ -97,7 +97,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 6365498105029962701, guid: b0c8ca8b857ce4c45b5931e4b9274f5c,
     type: 3}
-  score: {fileID: 5096790919150965142, guid: 5f19f6ec721756a4095931d8f3a9f570, type: 3}
+  scoreTwo: {fileID: 5096790919150965142, guid: 5f19f6ec721756a4095931d8f3a9f570,
+    type: 3}
+  scoreFour: {fileID: 5177407105203987820, guid: 25eecb9a5a008e64ca82a161455cb086,
+    type: 3}
+  scoreEight: {fileID: 2850422861043996075, guid: bdbca40e443bc3340a390741e2b9cb0a,
+    type: 3}
 --- !u!58 &874243088
 CircleCollider2D:
   m_ObjectHideFlags: 0

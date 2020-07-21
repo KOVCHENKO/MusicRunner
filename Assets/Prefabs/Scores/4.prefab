@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a88b5ab9571476f90265d60e65a5450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOut: 1
+  timeOut: 0.5
   detachChildren: 0
 --- !u!95 &8302379234926983081
 Animator:
