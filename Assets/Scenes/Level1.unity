@@ -1420,6 +1420,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4100968623967260062, guid: e20afd9e32833b5449147e197c754470,
+        type: 3}
+      propertyPath: point
+      value: 
+      objectReference: {fileID: 5096790919150965142, guid: 5f19f6ec721756a4095931d8f3a9f570,
+        type: 3}
     - target: {fileID: 4546796625713159472, guid: e20afd9e32833b5449147e197c754470,
         type: 3}
       propertyPath: m_Name
@@ -2876,11 +2882,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1184641227}
     m_Modifications:
-    - target: {fileID: 2662256903814136241, guid: e20afd9e32833b5449147e197c754470,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4546796625713159472, guid: e20afd9e32833b5449147e197c754470,
         type: 3}
       propertyPath: m_Name

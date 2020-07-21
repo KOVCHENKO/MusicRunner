@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4546796625713159472
+--- !u!1 &5096790919150965142
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9190814903010210957}
-  - component: {fileID: 7357882623170271469}
-  - component: {fileID: 4100968623967260062}
-  - component: {fileID: 874243088}
+  - component: {fileID: 211570609998783580}
+  - component: {fileID: 5784614747287801161}
+  - component: {fileID: 1815481356585678034}
+  - component: {fileID: -3683502964016755767}
   m_Layer: 0
-  m_Name: EnemyNote
-  m_TagString: Enemy
+  m_Name: 2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9190814903010210957
+--- !u!4 &211570609998783580
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4546796625713159472}
+  m_GameObject: {fileID: 5096790919150965142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.66, y: 4.75, z: 0}
-  m_LocalScale: {x: 0.32686734, y: 0.32686734, z: 0.32686734}
+  m_LocalPosition: {x: 3.49, y: 5.78, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7357882623170271469
+--- !u!212 &5784614747287801161
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4546796625713159472}
+  m_GameObject: {fileID: 5096790919150965142}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,45 +72,47 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 10d019302d405b14d876a29d7be50406, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f12754877b079e44aa5ba5cb8a849ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.82, y: 4.9}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4100968623967260062
+--- !u!95 &1815481356585678034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5096790919150965142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cadc702fbd61c7459005233963b593a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3683502964016755767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4546796625713159472}
+  m_GameObject: {fileID: 5096790919150965142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda20cc3c4254f63bfc22c2bf273ed11, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a88b5ab9571476f90265d60e65a5450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 6365498105029962701, guid: b0c8ca8b857ce4c45b5931e4b9274f5c,
-    type: 3}
-  score: {fileID: 5096790919150965142, guid: 5f19f6ec721756a4095931d8f3a9f570, type: 3}
---- !u!58 &874243088
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4546796625713159472}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.24644214, y: -1.4207848}
-  serializedVersion: 2
-  m_Radius: 0.6259467
+  timeOut: 0.5
+  detachChildren: 0

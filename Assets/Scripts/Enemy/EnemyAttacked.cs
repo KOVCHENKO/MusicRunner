@@ -5,6 +5,7 @@ namespace Enemy
     public class EnemyAttacked : MonoBehaviour
     {
         public GameObject explosion;
+        public GameObject score;
     
         void OnTriggerEnter2D(Collider2D other)
         {
@@ -16,9 +17,12 @@ namespace Enemy
                     Instantiate(explosion, transform.position, transform.rotation);
                 }
 
+                if (score)
+                {
+                    Instantiate(score, transform.position, transform.rotation);
+                }
+
                 Object.Destroy(this.gameObject);
-                
-                // Create point object instead
             }
         }
     }
