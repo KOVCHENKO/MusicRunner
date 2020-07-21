@@ -17,6 +17,8 @@ namespace Enemy
                 }
 
                 Object.Destroy(this.gameObject);
+                
+                // Create point object instead
             }
         }
     }
