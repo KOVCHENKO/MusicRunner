@@ -42,7 +42,7 @@ namespace Enemy
                 Debug.Log("Resetting multiplier: " + ScoreTimer.TargetScoreMultiplierTime);
                 
                 ScoreTimer.TargetScoreMultiplierTime = 0;
-                ScoreTimer.TargetScoreMultiplierTime += 2.0f;
+                ScoreTimer.TargetScoreMultiplierTime += 4.0f;
                 ScoreTimer.ResetMultiplier();
             }
             else
