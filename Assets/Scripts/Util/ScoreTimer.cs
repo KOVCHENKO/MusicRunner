@@ -2,7 +2,9 @@
 {
     public static class ScoreTimer
     {
-        private static int _scoreMultiplier;
+        public static float TargetScoreMultiplierTime = 2.0f;
+        
+        private static int _scoreMultiplier = 2;
         
         public static int GetScoreMultiplier()
         {
@@ -12,6 +14,11 @@
         public static void SetScoreMultiplier(int multiplier)
         {
             _scoreMultiplier += multiplier;
+        }
+
+        public static void ResetMultiplier()
+        {
+            _scoreMultiplier = 2;
         }
     }
 }

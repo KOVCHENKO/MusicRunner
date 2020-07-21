@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Serialization;
 using Util;
+using Object = UnityEngine.Object;
 
 namespace Enemy
 {
@@ -9,7 +12,12 @@ namespace Enemy
         public GameObject scoreTwo;
         public GameObject scoreFour;
         public GameObject scoreEight;
-    
+
+        private void Update()
+        {
+            ScoreTimer.TargetScoreMultiplierTime -= Time.deltaTime;
+        }
+
         void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag("Player")) {
@@ -28,7 +36,20 @@ namespace Enemy
 
         private void DefineEarnedScore()
         {
-            ScoreTimer.SetScoreMultiplier(2);
+            // Set Score Multiplier based on Timer
+            if (ScoreTimer.TargetScoreMultiplierTime <= 0)
+            {
+                Debug.Log("Resetting multiplier: " + ScoreTimer.TargetScoreMultiplierTime);
+                
+                ScoreTimer.TargetScoreMultiplierTime = 0;
+                ScoreTimer.TargetScoreMultiplierTime += 2.0f;
+                ScoreTimer.ResetMultiplier();
+            }
+            else
+            {
+                Debug.Log("Multiplying multiplier: " + ScoreTimer.TargetScoreMultiplierTime);
+                ScoreTimer.SetScoreMultiplier(2);
+            }
 
             switch (ScoreTimer.GetScoreMultiplier())
             {

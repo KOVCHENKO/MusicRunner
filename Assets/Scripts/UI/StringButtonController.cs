@@ -10,7 +10,6 @@ namespace UI
         {
             picker = GameObject.FindGameObjectWithTag("Player");
         
-            Debug.Log("change picker y position");
             float pickerYCoord = 0f;
             switch (posNumber)
             {
