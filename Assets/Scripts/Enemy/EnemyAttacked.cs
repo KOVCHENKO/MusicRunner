@@ -55,17 +55,28 @@ namespace Enemy
             {
                 case 2: 
                     Instantiate(scoreTwo, transform.position, transform.rotation);
+                    EarnScore(2);
                     break;
                 case 4:
                     Instantiate(scoreFour, transform.position, transform.rotation);
+                    EarnScore(4);
                     break;
                 case 8:
                     Instantiate(scoreEight, transform.position, transform.rotation);
+                    EarnScore(8);
                     break;
                 default:
                     Instantiate(scoreEight, transform.position, transform.rotation);
                     break;
             }
+        }
+
+        private void EarnScore(int amount)
+        {
+            Debug.Log("Earned score is: " + amount);
+
+            if (GameManager.gm)
+                GameManager.gm.AddPoints(amount);
         }
     }
 }

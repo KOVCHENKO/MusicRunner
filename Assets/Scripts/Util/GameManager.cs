@@ -143,13 +143,7 @@ namespace Util
 		score+=amount;
 
 		// update UI
-		UIScore.text = "Score: "+score.ToString();
-
-		// if score>highscore then update the highscore UI too
-		if (score>highscore) {
-			highscore = score;
-			UIHighScore.text = "Highscore: "+score.ToString();
-		}
+		UIScore.text = "Score: " + score.ToString();
 	}
 
 	// public function to remove player life and reset game accordingly
