@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Enemy\EnemyInstantiation.cs" />
      <Compile Include="Assets\Scripts\Level\CountdownController.cs" />
      <Compile Include="Assets\Scripts\Level\LevelController.cs" />
+     <Compile Include="Assets\Scripts\Level\MusicalStrings\AbstractMusicString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\FifthString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\FirstString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\ForthString.cs" />

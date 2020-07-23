@@ -17,11 +17,6 @@ namespace Enemy
                     Instantiate(enemyNote, new Vector3(x, y, 0), Quaternion.identity);
                 }
             } 
-            
-            // TODO: Count tempo
-            
-            // Instantiate based on the position
-            
         }
     }
 }
