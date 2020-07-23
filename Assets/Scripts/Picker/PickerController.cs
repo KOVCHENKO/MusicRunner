@@ -18,8 +18,8 @@ namespace Picker
         // Player position
         private float _vx;
         private float _vy;
-    
-        bool _isMoving = false;
+
+        private bool _isMoving = false;
     
         private void Awake()
         {
@@ -34,7 +34,7 @@ namespace Picker
             }
         }
 
-        void Update()
+        private void Update()
         {
             // determine horizontal velocity change based on the horizontal input
             _vx = Input.GetAxisRaw ("Horizontal");

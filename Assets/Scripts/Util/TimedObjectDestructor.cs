@@ -7,11 +7,11 @@ namespace Util
         public float timeOut = 1.0f;
         public bool detachChildren = false;
 
-        void Awake () {
+        private void Awake () {
             Invoke (nameof(DestroyNow), timeOut);
         }
 
-        void DestroyNow ()
+        private void DestroyNow ()
         {
             if (detachChildren) {
                 transform.DetachChildren ();

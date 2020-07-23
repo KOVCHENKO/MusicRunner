@@ -12,12 +12,12 @@ namespace Level
 
         private void Start()
         {
-            // Transfer to more suitable place
+            // TODO: Transfer to more suitable place
             _audioSource = GetComponent<AudioSource>();
             StartCoroutine(CountdownToStart());
         }
 
-        IEnumerator CountdownToStart()
+        private IEnumerator CountdownToStart()
         {
             while (countdownTime > 0)
             {

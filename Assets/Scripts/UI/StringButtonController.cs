@@ -6,7 +6,7 @@ namespace UI
     {
         public GameObject picker;
 
-        public void changeStringForPicker(int posNumber)
+        public void ChangeStringForPicker(int posNumber)
         {
             picker = GameObject.FindGameObjectWithTag("Player");
         
