@@ -1,11 +1,11 @@
-﻿﻿using UnityEngine;
+﻿﻿using Level;
+ using UnityEngine;
 
  namespace Camera
  {
      public class CameraFollowController : MonoBehaviour
      {
          public Transform target;
-
          private float _offsetZ;
     
          private void Start()

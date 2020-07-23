@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Level;
+using UnityEngine;
 
 namespace Picker
 {
@@ -44,7 +45,7 @@ namespace Picker
             // Change the actual velocity on the rigidbody
             _rigidbody2D.velocity = new Vector2(_vx * moveSpeed, _vy);
         
-            if (constantMoving)
+            if (constantMoving && LevelController.GameStarted)
             {
                 _rigidbody2D.velocity = new Vector2(moveSpeed, 0);
             }

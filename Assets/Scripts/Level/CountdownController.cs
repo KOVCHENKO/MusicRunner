@@ -8,9 +8,12 @@ namespace Level
     {
         public int countdownTime;
         public Text countdownDisplay;
+        private AudioSource _audioSource;
 
         private void Start()
         {
+            // Transfer to more suitable place
+            _audioSource = GetComponent<AudioSource>();
             StartCoroutine(CountdownToStart());
         }
 
@@ -28,10 +31,12 @@ namespace Level
             countdownDisplay.text = "GO!";
             
             LevelController.BeginGame();
+            _audioSource.Play();
             
             yield return new WaitForSeconds(1f);
             
             countdownDisplay.gameObject.SetActive(false);
+            
         }
     }
 }
