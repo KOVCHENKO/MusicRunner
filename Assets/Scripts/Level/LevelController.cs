@@ -2,11 +2,13 @@
 
 namespace Level
 {
-    public class LevelController : MonoBehaviour
+    public static class LevelController
     {
-        void Start()
+        public static bool GameStarted { get; private set; } = false;
+
+        public static void BeginGame()
         {
-            // Initialize script and create notes based on tempo
+            GameStarted = true;
         }
     }
 }

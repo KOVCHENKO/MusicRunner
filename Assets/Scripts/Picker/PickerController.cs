@@ -20,11 +20,6 @@ namespace Picker
     
         bool _isMoving = false;
     
-        void Start()
-        {
-        
-        }
-
         private void Awake()
         {
             // get a reference to the components we are going to be changing and store a reference for efficiency purposes
