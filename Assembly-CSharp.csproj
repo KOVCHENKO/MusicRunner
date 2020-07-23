@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\Level\MusicalStrings\FirstString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\ForthString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\IMusicString.cs" />
+     <Compile Include="Assets\Scripts\Level\MusicalStrings\MusicStringResolver.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\SecondString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\ThirdString.cs" />
      <Compile Include="Assets\Scripts\Picker\PickerController.cs" />

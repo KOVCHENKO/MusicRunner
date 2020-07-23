@@ -2,5 +2,8 @@
 {
     public interface IMusicString
     {
+        int Number{ get; }
+        
+        float YCoord{ get; }
     }
 }

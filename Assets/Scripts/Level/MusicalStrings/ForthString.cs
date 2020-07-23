@@ -2,6 +2,7 @@
 {
     public class ForthString : IMusicString
     {
-        public static float YCoord { get; } = 0.6f;
+        public int Number { get; } = 4;
+        public float YCoord { get; } = 0.6f;
     }
 }

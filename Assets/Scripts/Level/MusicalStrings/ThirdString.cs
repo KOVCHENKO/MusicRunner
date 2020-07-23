@@ -2,6 +2,7 @@
 {
     public class ThirdString : IMusicString
     {
-        public static float YCoord { get; } = 1.6f;
+        public int Number { get; } = 3;
+        public float YCoord { get; } = 1.6f;
     }
 }

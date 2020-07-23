@@ -2,6 +2,7 @@
 {
     public class SecondString : IMusicString
     {
-        public static float YCoord { get; } = 2.6f;
+        public int Number { get; } = 2;
+        public float YCoord { get; } = 2.6f;
     }
 }
