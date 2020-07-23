@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Level.MusicalStrings
 {
     public static class MusicStringResolver
     {
-        private static readonly ArrayList MusicStrings = new ArrayList
+        private static readonly List<IMusicString> MusicStrings = new List<IMusicString>
         {
             new FirstString(),
             new SecondString(),

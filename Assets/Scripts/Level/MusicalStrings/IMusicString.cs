@@ -5,7 +5,5 @@
         int Number{ get; }
         
         float YCoord{ get; }
-
-        float NotePositionYOnString { get; }
     }
 }

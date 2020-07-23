@@ -1,10 +1,13 @@
 ﻿namespace Level.MusicalStrings
 {
-    public class FirstString : AbstractMusicString, IMusicString
+    public class FirstString : IMusicString
     {
         public int Number { get; } = 1;
         public float YCoord { get; } = 3.6f;
         
-        public float NotePositionYOnString { get; }
+        public float GetEnemyNoteYCoord()
+        {
+            return YCoord + 0.7f;
+        }
     }
 }

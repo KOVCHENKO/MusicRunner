@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Level.MusicalStrings;
+using UnityEngine;
 
 namespace Enemy
 {
@@ -10,18 +11,78 @@ namespace Enemy
         
         private void Start()
         {
-            float firstStringY = 4.3f;
-            float firsrtPositionX = 0;
+            float firsrtPositionX = 0;            
 
-            for (int y = 0; y < height; ++y)
+            for (int x = 0; x < width; x++)
             {
-                for (int x = 0; x < width; x++)
-                {
-                    Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, firstStringY, 0), Quaternion.identity);
-                    firsrtPositionX += 1f;
-                }
-                
-                firstStringY -= 1f;
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new FirstString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new ThirdString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new SecondString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new ThirdString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new FirstString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new ThirdString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new SecondString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new ThirdString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new FirstString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new ThirdString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new SecondString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
+            }
+            
+            for (int x = 0; x < width; x++)
+            {
+                Instantiate(enemyNote, new Vector3(firsrtPositionX * 3f, new ThirdString().GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                firsrtPositionX += 1f;
             }
         }
     }
