@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6523310349465884089}
   - component: {fileID: 2113435428}
   - component: {fileID: 2113435429}
+  - component: {fileID: -1857454358867941423}
   m_Layer: 0
   m_Name: evil_musical_note_8
   m_TagString: Untagged
@@ -97,12 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 6365498105029962701, guid: b0c8ca8b857ce4c45b5931e4b9274f5c,
     type: 3}
-  scoreTwo: {fileID: 5096790919150965142, guid: 5f19f6ec721756a4095931d8f3a9f570,
-    type: 3}
-  scoreFour: {fileID: 5177407105203987820, guid: 25eecb9a5a008e64ca82a161455cb086,
-    type: 3}
-  scoreEight: {fileID: 2850422861043996075, guid: bdbca40e443bc3340a390741e2b9cb0a,
-    type: 3}
+  scoreAward: 0
 --- !u!58 &2113435429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -119,3 +115,18 @@ CircleCollider2D:
   m_Offset: {x: -0.4, y: -0.5}
   serializedVersion: 2
   m_Radius: 0.61917245
+--- !u!114 &-1857454358867941423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6930998099184004893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda20cc3c4254f63bfc22c2bf273ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 6365498105029962701, guid: b0c8ca8b857ce4c45b5931e4b9274f5c,
+    type: 3}
+  scoreAward: 8

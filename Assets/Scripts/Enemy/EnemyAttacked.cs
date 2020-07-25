@@ -9,9 +9,8 @@ namespace Enemy
     public class EnemyAttacked : MonoBehaviour
     {
         public GameObject explosion;
-        public GameObject scoreTwo;
-        public GameObject scoreFour;
-        public GameObject scoreEight;
+
+        public int scoreAward;
 
         private void Update()
         {
@@ -28,46 +27,9 @@ namespace Enemy
                     Instantiate(explosion, transform.position, transform.rotation);
                 }
 
-                DefineEarnedScore();
+                EarnScore(scoreAward);
 
                 Object.Destroy(this.gameObject);
-            }
-        }
-
-        private void DefineEarnedScore()
-        {
-            // Set Score Multiplier based on Timer
-            if (ScoreTimer.TargetScoreMultiplierTime <= 0)
-            {
-                Debug.Log("Resetting multiplier: " + ScoreTimer.TargetScoreMultiplierTime);
-                
-                ScoreTimer.TargetScoreMultiplierTime = 0;
-                ScoreTimer.TargetScoreMultiplierTime += 4.0f;
-                ScoreTimer.ResetMultiplier();
-            }
-            else
-            {
-                Debug.Log("Multiplying multiplier: " + ScoreTimer.TargetScoreMultiplierTime);
-                ScoreTimer.SetScoreMultiplier(2);
-            }
-
-            switch (ScoreTimer.GetScoreMultiplier())
-            {
-                case 2: 
-                    Instantiate(scoreTwo, transform.position, transform.rotation);
-                    EarnScore(2);
-                    break;
-                case 4:
-                    Instantiate(scoreFour, transform.position, transform.rotation);
-                    EarnScore(4);
-                    break;
-                case 8:
-                    Instantiate(scoreEight, transform.position, transform.rotation);
-                    EarnScore(8);
-                    break;
-                default:
-                    Instantiate(scoreEight, transform.position, transform.rotation);
-                    break;
             }
         }
 

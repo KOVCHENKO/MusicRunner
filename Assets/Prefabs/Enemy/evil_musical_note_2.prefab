@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6937874287510007404}
   - component: {fileID: 6937874287510007405}
+  - component: {fileID: -5360407648936122357}
   m_Layer: 0
   m_Name: evil_musical_note_2
   m_TagString: Untagged
@@ -81,3 +82,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5360407648936122357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6937874287510007406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda20cc3c4254f63bfc22c2bf273ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 6365498105029962701, guid: b0c8ca8b857ce4c45b5931e4b9274f5c,
+    type: 3}
+  scoreAward: 2
