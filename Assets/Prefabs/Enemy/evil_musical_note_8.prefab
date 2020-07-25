@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 6365498105029962701, guid: b0c8ca8b857ce4c45b5931e4b9274f5c,
     type: 3}
-  scoreAward: 0
+  scoreAward: 8
 --- !u!58 &2113435429
 CircleCollider2D:
   m_ObjectHideFlags: 0
