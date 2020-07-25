@@ -230,11 +230,8 @@ namespace Enemy
             InstantiateEnemyNotes(2, new ForthString(), enemyNote8);
             InstantiateEnemyNotes(2, new ThirdString(), enemyNote8);
             
-            InstantiateEnemyNotes(2, new ForthString(), enemyNote8);
-            InstantiateEnemyNotes(2, new ThirdString(), enemyNote8);
-            
-            InstantiateEnemyNotes(2, new ForthString(), enemyNote8);
-            InstantiateEnemyNotes(2, new ThirdString(), enemyNote8);
+            // Another long notes
+            InstantiateEnemyNotes(4, new ThirdString(), enemyNote2);
         }
 
         private void InstantiateEnemyNotes(int count, IMusicString stringNumber, GameObject enemyNoteType)
