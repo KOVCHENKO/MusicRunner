@@ -10,9 +10,8 @@ namespace Level
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "Player")
+            if (other.CompareTag("Player"))
             {
-                Object.Destroy(this.gameObject);
                 WinLevel(other);
             }
         }
