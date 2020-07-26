@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Point
+  - String
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - 
   - 
   - Background
-  - 
-  - 
-  - 
+  - Enemy
+  - Picker
+  - Strings
   - 
   - 
   - 
@@ -40,6 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Strings
+    uniqueID: 3650053639
+    locked: 0
+  - name: Enemy
+    uniqueID: 48983519
+    locked: 0
+  - name: Picker
+    uniqueID: 3064104517
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2290350105
     locked: 0
