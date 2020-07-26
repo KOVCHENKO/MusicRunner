@@ -226,12 +226,27 @@ namespace Enemy
             
             InstantiateEnemyNotes(2, new ForthString(), enemyNote8);
             InstantiateEnemyNotes(2, new ThirdString(), enemyNote8);
-            
             InstantiateEnemyNotes(2, new ForthString(), enemyNote8);
-            InstantiateEnemyNotes(2, new ThirdString(), enemyNote8);
             
             // Another long notes
+            ReduceXPosition();
+            ReduceXPosition();
             InstantiateEnemyNotes(4, new ThirdString(), enemyNote2);
+            InstantiateEnemyNotes(4, new FirstString(), enemyNote2);
+            InstantiateEnemyNotes(4, new ForthString(), enemyNote2);
+            InstantiateEnemyNotes(4, new ThirdString(), enemyNote2);
+            InstantiateEnemyNotes(2, new SecondString(), enemyNote2);
+            InstantiateEnemyNotes(2, new FifthString(), enemyNote2);
+            InstantiateEnemyNotes(2, new ThirdString(), enemyNote2);
+            InstantiateEnemyNotes(2, new ForthString(), enemyNote2);
+            InstantiateEnemyNotes(2, new SecondString(), enemyNote2);
+            InstantiateEnemyNotes(2, new FifthString(), enemyNote2);
+            InstantiateEnemyNotes(2, new ThirdString(), enemyNote2);
+            InstantiateEnemyNotes(2, new ForthString(), enemyNote2);
+            InstantiateEnemyNotes(2, new FirstString(), enemyNote2);
+            InstantiateEnemyNotes(2, new FifthString(), enemyNote2);
+
+            
         }
 
         private void InstantiateEnemyNotes(int count, IMusicString stringNumber, GameObject enemyNoteType)
