@@ -19,8 +19,6 @@ namespace Picker
         private float _vx;
         private float _vy;
 
-        private bool _isMoving = false;
-    
         private void Awake()
         {
             // get a reference to the components we are going to be changing and store a reference for efficiency purposes
@@ -49,6 +47,14 @@ namespace Picker
             {
                 _rigidbody2D.velocity = new Vector2(moveSpeed, 0);
             }
+        }
+        
+        public void FreezeMotion() {
+            Debug.Log("Level has been won");
+            
+            constantMoving = false;
+            _rigidbody2D.velocity = new Vector2(0,0);
+            _rigidbody2D.isKinematic = true;
         }
     }
 }
