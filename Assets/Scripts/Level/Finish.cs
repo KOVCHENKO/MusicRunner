@@ -1,6 +1,5 @@
 ﻿using Picker;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Level
 {
