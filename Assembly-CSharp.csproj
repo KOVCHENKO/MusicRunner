@@ -65,6 +65,8 @@
      <Compile Include="Assets\Scripts\Level\CountdownController.cs" />
      <Compile Include="Assets\Scripts\Level\Finish.cs" />
      <Compile Include="Assets\Scripts\Level\LevelController.cs" />
+     <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelOneStructure.cs" />
+     <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelinstantiationUtils.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\FifthString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\FirstString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\ForthString.cs" />
