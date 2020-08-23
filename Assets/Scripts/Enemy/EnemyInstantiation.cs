@@ -24,7 +24,6 @@ namespace Enemy
             {
                 case 1:
                 {
-                    // levelStructure = new LevelOneStructure();
                     LevelOneStructure levelStructure = gameObject.AddComponent<LevelOneStructure>();;
                     levelStructure.enemyNote2 = enemyNote2;
                     levelStructure.enemyNote4 = enemyNote4;
@@ -36,7 +35,13 @@ namespace Enemy
                 }
                 case 2:
                 {
-                    // levelStructure = new LevelOneStructure();
+                    LevelTwoStructure levelStructure = gameObject.AddComponent<LevelTwoStructure>();;
+                    levelStructure.enemyNote2 = enemyNote2;
+                    levelStructure.enemyNote4 = enemyNote4;
+                    levelStructure.enemyNote8 = enemyNote8;
+                    levelStructure.finish = finish;
+                    
+                    levelStructure.CreateLevelElements();
                     break;
                 }
             }
@@ -68,6 +73,29 @@ namespace Enemy
                     _initialXPosition += 1f;
                 }
             }
+        }
+        
+        public void InsertBlankSpace(int count, int noteType)
+        {
+            if (noteType == 8)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    _initialXPosition += 1f;
+                }
+            } else if (noteType == 4) {
+                for (int x = 0; x < count; x++)
+                {
+                    _initialXPosition += 1f * 2;
+                }    
+            } else if (noteType == 2) {
+                for (int x = 0; x < count; x++)
+                {
+                    _initialXPosition += 1f * 4;
+                }
+            }
+            
+            
         }
         
         protected void IncreaseXPosition()
