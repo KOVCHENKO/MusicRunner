@@ -59,9 +59,6 @@ namespace Level.LevelInstantiations
             InstantiateEnemyNotes(8, new FifthString(), enemyNote8);
             InstantiateEnemyNotes(8, new ForthString(), enemyNote8);
             
-            
-
-            
             // Finish
             InstantiateFinish();
         }

@@ -928,17 +928,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c162c398b76947728cdca33ec869a064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelAfterVictory: 
-  levelAfterGameOver: 
+  levelAfterVictory: Menu
+  levelAfterGameOver: Menu
   score: 0
   highscore: 0
   startLives: 3
   lives: 3
   UIScore: {fileID: 668630944}
-  UIHighScore: {fileID: 0}
-  UILevel: {fileID: 0}
   UIExtraLives: []
-  UIGamePaused: {fileID: 0}
 --- !u!4 &1247470489
 Transform:
   m_ObjectHideFlags: 0
@@ -977,7 +974,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3add615c4cd93644d9b06bfbb5a48460, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6e3710f9a874e414a94c5a50962b50cb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1082,6 +1079,7 @@ MonoBehaviour:
   enemyNote2: {fileID: 6937874287510007406, guid: e2731767966f21e49b17e6a7cf2d37bf,
     type: 3}
   finish: {fileID: 5703447612426249328, guid: c794c88483902b142a3f0d3f3a407d2b, type: 3}
+  _initialXPosition: 0
   levelNumber: 2
 --- !u!1001 &1353365115
 PrefabInstance:
