@@ -1,5 +1,6 @@
 ﻿using Level.LevelInstantiations;
 using Level.MusicalStrings;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,21 +12,77 @@ namespace Enemy
         public GameObject enemyNote4;
         public GameObject enemyNote2;
         public GameObject finish;
-        
-        public int width = 4;
-        public int height = 4;
+        public float _initialXPosition = 0;
 
-        // private float _initialXPosition = 0;            
 
+        public int levelNumber;
         
         private void Start()
         {
-            LevelOneStructure levelOneStructure = new LevelOneStructure();
-            levelOneStructure.enemyNote2 = enemyNote2;
-            levelOneStructure.enemyNote4 = enemyNote4;
-            levelOneStructure.enemyNote8 = enemyNote8;
-            levelOneStructure.finish = finish;
-            levelOneStructure.CreateLevelElements();
+            // LevelOneStructure levelStructure = null;
+            switch (levelNumber)
+            {
+                case 1:
+                {
+                    // levelStructure = new LevelOneStructure();
+                    LevelOneStructure levelStructure = gameObject.AddComponent<LevelOneStructure>();;
+                    levelStructure.enemyNote2 = enemyNote2;
+                    levelStructure.enemyNote4 = enemyNote4;
+                    levelStructure.enemyNote8 = enemyNote8;
+                    levelStructure.finish = finish;
+                    
+                    levelStructure.CreateLevelElements();
+                    break;
+                }
+                case 2:
+                {
+                    // levelStructure = new LevelOneStructure();
+                    break;
+                }
+            }
+            
+        }
+        
+        public void InstantiateEnemyNotes(int count, IMusicString stringNumber, GameObject enemyNoteType)
+        {
+            if (enemyNoteType == enemyNote8)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    Instantiate(enemyNoteType, new Vector3(_initialXPosition * 3f / 2, stringNumber.GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                    _initialXPosition += 1f;
+                }
+            } else if (enemyNoteType == enemyNote4)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    Instantiate(enemyNoteType, new Vector3(_initialXPosition * 3f, stringNumber.GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                    _initialXPosition += 1f;
+                }
+            }
+            else if (enemyNoteType == enemyNote2)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    Instantiate(enemyNoteType, new Vector3(_initialXPosition * 3f * 2, stringNumber.GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                    _initialXPosition += 1f;
+                }
+            }
+        }
+        
+        protected void IncreaseXPosition()
+        {
+            _initialXPosition *= 2;
+        }
+        
+        protected void ReduceXPosition()
+        {
+            _initialXPosition /= 2;
+        }
+
+        protected void InstantiateFinish()
+        {
+            Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0), Quaternion.identity);
         }
     }
 }

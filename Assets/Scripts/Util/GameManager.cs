@@ -23,10 +23,8 @@ namespace Util
 
 	// UI elements to control
 	public Text UIScore;
-	public Text UIHighScore;
-	public Text UILevel;
 	public GameObject[] UIExtraLives;
-	public GameObject UIGamePaused;
+	// public GameObject UIGamePaused;
 
 	// private variables
 	GameObject _player;
@@ -48,11 +46,11 @@ namespace Util
 		// if ESC pressed then pause the game
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			if (Time.timeScale > 0f) {
-				UIGamePaused.SetActive(true); // this brings up the pause UI
+				// UIGamePaused.SetActive(true); // this brings up the pause UI
 				Time.timeScale = 0f; // this pauses the game action
 			} else {
 				Time.timeScale = 1f; // this unpauses the game action (ie. back to normal)
-				UIGamePaused.SetActive(false); // remove the pause UI
+				// UIGamePaused.SetActive(false); // remove the pause UI
 			}
 		}
 	}
@@ -87,14 +85,8 @@ namespace Util
 		if (UIScore==null)
 			Debug.LogError ("Need to set UIScore on Game Manager.");
 		
-		if (UIHighScore==null)
-			Debug.LogError ("Need to set UIHighScore on Game Manager.");
-		
-		if (UILevel==null)
-			Debug.LogError ("Need to set UILevel on Game Manager.");
-		
-		if (UIGamePaused==null)
-			Debug.LogError ("Need to set UIGamePaused on Game Manager.");
+		// if (UIGamePaused==null)
+			// Debug.LogError ("Need to set UIGamePaused on Game Manager.");
 		
 		// get stored player prefs
 		refreshPlayerState();
@@ -123,8 +115,6 @@ namespace Util
 	void refreshGUI() {
 		// set the text elements of the UI
 		UIScore.text = "Score: "+score.ToString();
-		UIHighScore.text = "Highscore: "+highscore.ToString ();
-		UILevel.text = _scene.name;
 		
 		// turn on the appropriate number of life indicators in the UI based on the number of lives left
 		for(int i=0;i<UIExtraLives.Length;i++) {

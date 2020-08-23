@@ -1,9 +1,10 @@
-﻿using Level.MusicalStrings;
+﻿using Enemy;
+using Level.MusicalStrings;
 using UnityEngine;
 
 namespace Level.LevelInstantiations
 {
-    public class LevelOneStructure : LevelInstantiationUtils
+    public class LevelOneStructure: EnemyInstantiation
     {
         public void CreateLevelElements()
         {
@@ -42,7 +43,7 @@ namespace Level.LevelInstantiations
             InstantiateEnemyNotes(4, new FirstString(), enemyNote8);
             InstantiateEnemyNotes(4, new SecondString(), enemyNote8);
             InstantiateEnemyNotes(4, new ThirdString(), enemyNote8);
-
+            
             // Change position
             InstantiateEnemyNotes(1, new FirstString(), enemyNote8);
             InstantiateEnemyNotes(1, new ForthString(), enemyNote8);
@@ -220,7 +221,7 @@ namespace Level.LevelInstantiations
             InstantiateEnemyNotes(2, new ThirdString(), enemyNote2);
             InstantiateEnemyNotes(2, new ForthString(), enemyNote2);
             InstantiateEnemyNotes(2, new FirstString(), enemyNote2);
-
+            
             // Change music rythm and length
             IncreaseXPosition();
             IncreaseXPosition();
@@ -328,7 +329,7 @@ namespace Level.LevelInstantiations
             InstantiateEnemyNotes(1, new FifthString(), enemyNote8);
             
             // Finish
-            Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0), Quaternion.identity);
+            InstantiateFinish();
         }
     }
 }
