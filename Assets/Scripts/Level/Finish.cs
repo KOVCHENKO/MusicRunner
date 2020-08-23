@@ -20,6 +20,8 @@ namespace Level
         {
             other.gameObject.GetComponent<PickerController>().FreezeMotion();
             GameManager.gm.LevelCompete();
+            
+            PlayerPrefs.SetInt("Level", 1);
         }
     }
 }
