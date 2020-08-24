@@ -7,5 +7,7 @@
         float YCoord{ get; }
 
         float GetEnemyNoteYCoord();
+
+        float GetStringBreakYCoord();
     }
 }

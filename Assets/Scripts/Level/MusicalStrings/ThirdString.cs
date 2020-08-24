@@ -9,5 +9,10 @@
         {
             return YCoord + 0.7f;
         }
+
+        public float GetStringBreakYCoord()
+        {
+            return YCoord + 0.36f;
+        }
     }
 }

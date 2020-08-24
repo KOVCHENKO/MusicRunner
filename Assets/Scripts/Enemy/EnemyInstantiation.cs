@@ -12,6 +12,7 @@ namespace Enemy
         public GameObject enemyNote4;
         public GameObject enemyNote2;
         public GameObject finish;
+        public GameObject stringBreak;
         public float _initialXPosition = 0;
 
 
@@ -39,6 +40,18 @@ namespace Enemy
                     levelStructure.enemyNote2 = enemyNote2;
                     levelStructure.enemyNote4 = enemyNote4;
                     levelStructure.enemyNote8 = enemyNote8;
+                    levelStructure.finish = finish;
+                    
+                    levelStructure.CreateLevelElements();
+                    break;
+                }
+                case 3:
+                {
+                    LevelThreeStructure levelStructure = gameObject.AddComponent<LevelThreeStructure>();;
+                    levelStructure.enemyNote2 = enemyNote2;
+                    levelStructure.enemyNote4 = enemyNote4;
+                    levelStructure.enemyNote8 = enemyNote8;
+                    levelStructure.stringBreak = stringBreak;
                     levelStructure.finish = finish;
                     
                     levelStructure.CreateLevelElements();
@@ -73,6 +86,11 @@ namespace Enemy
                     _initialXPosition += 1f;
                 }
             }
+        }
+
+        public void InstantiateStringBreak(IMusicString stringNumber)
+        {
+            Instantiate(stringBreak, new Vector3(_initialXPosition, stringNumber.GetStringBreakYCoord(), 0), Quaternion.identity);
         }
         
         public void InsertBlankSpace(int count, int noteType)
