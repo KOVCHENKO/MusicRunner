@@ -366,20 +366,20 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458173536}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 720, y: 600}
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 200
+  m_ScaleFactor: 0.8
+  m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 1
-  m_FallbackScreenDPI: 10
-  m_DefaultSpriteDPI: 10
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
 --- !u!223 &458173539
 Canvas:
@@ -1079,6 +1079,7 @@ MonoBehaviour:
   enemyNote2: {fileID: 6937874287510007406, guid: e2731767966f21e49b17e6a7cf2d37bf,
     type: 3}
   finish: {fileID: 5703447612426249328, guid: c794c88483902b142a3f0d3f3a407d2b, type: 3}
+  stringBreak: {fileID: 0}
   _initialXPosition: 0
   levelNumber: 2
 --- !u!1001 &1353365115
