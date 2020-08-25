@@ -8,9 +8,16 @@ namespace Enemy
 {
     public class EnemyInstantiation : MonoBehaviour
     {
+        // Scores +
         public GameObject enemyNote8;
         public GameObject enemyNote4;
         public GameObject enemyNote2;
+        
+        // Scores -
+        public GameObject pause2;
+        public GameObject pause4;
+        public GameObject pause8;
+        
         public GameObject finish;
         public GameObject stringBreak;
         public float _initialXPosition = 0;
@@ -20,7 +27,6 @@ namespace Enemy
         
         private void Start()
         {
-            // LevelOneStructure levelStructure = null;
             switch (levelNumber)
             {
                 case 1:
@@ -51,6 +57,10 @@ namespace Enemy
                     levelStructure.enemyNote2 = enemyNote2;
                     levelStructure.enemyNote4 = enemyNote4;
                     levelStructure.enemyNote8 = enemyNote8;
+                    levelStructure.pause2 = pause2;
+                    levelStructure.pause4 = pause4;
+                    levelStructure.pause8 = pause8;
+                    
                     levelStructure.stringBreak = stringBreak;
                     levelStructure.finish = finish;
                     
@@ -63,14 +73,14 @@ namespace Enemy
         
         public void InstantiateEnemyNotes(int count, IMusicString stringNumber, GameObject enemyNoteType)
         {
-            if (enemyNoteType == enemyNote8)
+            if (enemyNoteType == enemyNote8 || enemyNoteType == pause8)
             {
                 for (int x = 0; x < count; x++)
                 {
                     Instantiate(enemyNoteType, new Vector3(_initialXPosition * 3f / 2, stringNumber.GetEnemyNoteYCoord(), 0), Quaternion.identity);
                     _initialXPosition += 1f;
                 }
-            } else if (enemyNoteType == enemyNote4)
+            } else if (enemyNoteType == enemyNote4 || enemyNoteType == pause4)
             {
                 for (int x = 0; x < count; x++)
                 {
@@ -78,7 +88,7 @@ namespace Enemy
                     _initialXPosition += 1f;
                 }
             }
-            else if (enemyNoteType == enemyNote2)
+            else if (enemyNoteType == enemyNote2 || enemyNoteType == pause2)
             {
                 for (int x = 0; x < count; x++)
                 {
@@ -130,5 +140,7 @@ namespace Enemy
         {
             Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0), Quaternion.identity);
         }
+        
+        
     }
 }
