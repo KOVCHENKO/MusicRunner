@@ -2,16 +2,30 @@
 
 namespace Level.MusicalStrings
 {
-    public interface IMusicString
+    public abstract class IMusicString
     {
-        int Number{ get; }
+        public abstract int Number { get; }
         
-        float YCoord{ get; }
+        public abstract float YCoord{ get; }
 
-        float GetEnemyNoteYCoord(GameObject value);
-        
-        float GetEnemyNoteYCoord();
+        public float GetEnemyNoteYCoord(GameObject value)
+        {
+            if (value.CompareTag("Note"))
+            {    
+                return YCoord + 0.7f;
+            }
 
-        float GetStringBreakYCoord();
+            return YCoord;
+        }
+
+        public float GetEnemyNoteYCoord()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public float GetStringBreakYCoord()
+        {
+            return YCoord + 0.36f;
+        }
     }
 }
