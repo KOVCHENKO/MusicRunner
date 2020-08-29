@@ -1,4 +1,5 @@
-﻿using Level.LevelInstantiations;
+﻿using System.Collections.Generic;
+using Level.LevelInstantiations;
 using Level.MusicalStrings;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -69,6 +70,41 @@ namespace Enemy
                 }
             }
             
+        }
+
+        public void InstantiateEnemyNotesOnDifferentLines(int count, Dictionary<IMusicString, GameObject> musicElementsOnString, GameObject enemyNoteType)
+        {
+            if (enemyNoteType == enemyNote8 || enemyNoteType == pause8)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    foreach (var musicElementOnString in musicElementsOnString)
+                    {
+                        Instantiate(musicElementOnString.Value, new Vector3(_initialXPosition * 3f / 2, musicElementOnString.Key.GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                    }
+                    _initialXPosition += 1f;
+                }
+            } else if (enemyNoteType == enemyNote4 || enemyNoteType == pause4)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    foreach (var musicElementOnString in musicElementsOnString)
+                    {
+                        Instantiate(musicElementOnString.Value, new Vector3(_initialXPosition * 3f, musicElementOnString.Key.GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                    }
+                    _initialXPosition += 1f;
+                }
+            } else if (enemyNoteType == enemyNote2 || enemyNoteType == pause2)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    foreach (var musicElementOnString in musicElementsOnString)
+                    {
+                        Instantiate(musicElementOnString.Value, new Vector3(_initialXPosition * 3f * 2, musicElementOnString.Key.GetEnemyNoteYCoord(), 0), Quaternion.identity);
+                    }
+                    _initialXPosition += 1f;
+                }
+            }
         }
         
         public void InstantiateEnemyNotes(int count, IMusicString stringNumber, GameObject enemyNoteType)
