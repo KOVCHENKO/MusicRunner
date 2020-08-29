@@ -1,4 +1,6 @@
-﻿namespace Level.MusicalStrings
+﻿using UnityEngine;
+
+namespace Level.MusicalStrings
 {
     public interface IMusicString
     {
@@ -6,6 +8,8 @@
         
         float YCoord{ get; }
 
+        float GetEnemyNoteYCoord(GameObject value);
+        
         float GetEnemyNoteYCoord();
 
         float GetStringBreakYCoord();
