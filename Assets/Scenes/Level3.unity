@@ -1082,8 +1082,6 @@ MonoBehaviour:
   pause4: {fileID: 6937874287510007406, guid: b49087a481142eb4cb97427772135d6e, type: 3}
   pause8: {fileID: 6937874287510007406, guid: d57ba79a4e4c74b45835c0e594f9329c, type: 3}
   finish: {fileID: 5703447612426249328, guid: c794c88483902b142a3f0d3f3a407d2b, type: 3}
-  stringBreak: {fileID: 9005422253973484104, guid: 81f53b6e53635184891c0fac13cd38cb,
-    type: 3}
   _initialXPosition: 0
   levelNumber: 3
 --- !u!1001 &1353365115

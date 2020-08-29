@@ -54,6 +54,87 @@ namespace Level.LevelInstantiations
                 { new FifthString(), pause2 },
             }, enemyNote2);
             
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), enemyNote2 },
+                { new SecondString(), pause2 },
+                { new ThirdString(), pause2 },
+                { new ForthString(),  pause2},
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), pause2 },
+                { new SecondString(), enemyNote2 },
+                { new ThirdString(), pause2 },
+                { new ForthString(),  pause2},
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), pause2 },
+                { new SecondString(), pause2 },
+                { new ThirdString(), enemyNote2 },
+                { new ForthString(),  pause2},
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), pause2 },
+                { new SecondString(), pause2 },
+                { new ThirdString(), pause2 },
+                { new ForthString(), enemyNote2 },
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), pause2 },
+                { new SecondString(), pause2 },
+                { new ThirdString(), pause2 },
+                { new ForthString(), pause2 },
+                { new FifthString(), enemyNote2 },
+            }, enemyNote2);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), pause2 },
+                { new SecondString(), pause2 },
+                { new ThirdString(), pause2 },
+                { new ForthString(), enemyNote2 },
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), pause2 },
+                { new SecondString(), pause2 },
+                { new ThirdString(), enemyNote2 },
+                { new ForthString(), pause2 },
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), pause2 },
+                { new SecondString(), enemyNote2 },
+                { new ThirdString(), pause2 },
+                { new ForthString(), pause2 },
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), enemyNote2 },
+                { new SecondString(), pause2 },
+                { new ThirdString(), pause2 },
+                { new ForthString(), pause2 },
+                { new FifthString(), pause2 },
+            }, enemyNote2);
+            
             IncreaseXPosition();
             IncreaseXPosition();
             //
