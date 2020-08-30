@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Level.LevelInstantiations;
+using Level.MusicalStrings;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Util
@@ -28,8 +31,8 @@ namespace Util
         private bool IsLevelAvailable(int levelToLoad)
         {
             Debug.Log("Max level in prefs: " + PlayerPrefs.GetInt("Level"));
-            
-            if (PlayerPrefs.GetInt("Level") >= levelToLoad)
+
+            if (PlayerPrefs.GetInt("Score") >= LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
             {
                 Debug.Log("Current min level: " + levelToLoad);
                 return true;

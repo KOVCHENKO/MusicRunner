@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Level.LevelInstantiations;
 using UnityEngine;
 using UnityEngine.UI;
+using Util;
 
 namespace Level.Menu
 {
@@ -8,13 +9,16 @@ namespace Level.Menu
     {
         public Sprite levelIsBlockedSprite;
         public int levelToLoad;
+        // public MainMenuManager mainMenuManager;
         
         void Start () {
-            if (PlayerPrefs.GetInt("Level") < levelToLoad)
+            Debug.Log("Current score is " + PlayerPrefs.GetInt("Score"));
+                
+            if (PlayerPrefs.GetInt("Score") <= 
+                LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
             {
                 gameObject.GetComponent<Image>().sprite = levelIsBlockedSprite;
             }
-            
         }
     }
 }
