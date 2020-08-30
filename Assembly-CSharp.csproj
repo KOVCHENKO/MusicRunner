@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelOneStructure.cs" />
      <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelThreeStructure.cs" />
      <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelTwoStructure.cs" />
+     <Compile Include="Assets\Scripts\Level\Menu\GamePauseController.cs" />
      <Compile Include="Assets\Scripts\Level\Menu\MenuElementAppearance.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\FifthString.cs" />
      <Compile Include="Assets\Scripts\Level\MusicalStrings\FirstString.cs" />
