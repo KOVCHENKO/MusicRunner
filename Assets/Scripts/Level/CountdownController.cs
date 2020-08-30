@@ -12,6 +12,10 @@ namespace Level
 
         private void Start()
         {
+            // Starting after Pause - Again or from Menu
+            LevelController.GameStarted = false;
+            Time.timeScale = 1f; // this pauses the game action
+
             // TODO: Transfer to more suitable place
             _audioSource = GetComponent<AudioSource>();
             StartCoroutine(CountdownToStart());
