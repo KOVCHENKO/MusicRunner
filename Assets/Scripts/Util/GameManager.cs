@@ -16,18 +16,13 @@ namespace Util
 
 		// game performance
 		public int score = 0;
-		public int highscore = 0;
-		public int startLives = 3;
-		public int lives = 3;
+		public int currentGameLevel;
 
 		// UI elements to control
 		public Text UIScore;
-		public GameObject[] UIExtraLives;
-		// public GameObject UIGamePaused;
 
 		// private variables
 		GameObject _player;
-		Vector3 _spawnLocation;
 		Scene _scene;
 
 		// set things up here
@@ -66,9 +61,6 @@ namespace Util
 			// get current scene
 			_scene = SceneManager.GetActiveScene();
 
-			// get initial _spawnLocation based on initial position of player
-			_spawnLocation = _player.transform.position;
-
 			// if levels not specified, default to current level
 			if (levelAfterVictory=="") {
 				Debug.LogWarning("levelAfterVictory not specified, defaulted to current level");
@@ -84,45 +76,14 @@ namespace Util
 			if (UIScore==null)
 				Debug.LogError ("Need to set UIScore on Game Manager.");
 			
-			// if (UIGamePaused==null)
-				// Debug.LogError ("Need to set UIGamePaused on Game Manager.");
-			
-			// get stored player prefs
-			refreshPlayerState();
-
 			// get the UI ready for the game
 			refreshGUI();
-		}
-
-		// get stored Player Prefs if they exist, otherwise go with defaults set on gameObject
-		void refreshPlayerState() {
-			lives = PlayerPrefManager.GetLives();
-
-			// special case if lives <= 0 then must be testing in editor, so reset the player prefs
-			if (lives <= 0) {
-				PlayerPrefManager.ResetPlayerState(startLives,false);
-				lives = PlayerPrefManager.GetLives();
-			}
-			score = PlayerPrefManager.GetScore();
-			highscore = PlayerPrefManager.GetHighscore();
-
-			// save that this level has been accessed so the MainMenu can enable it
-			PlayerPrefManager.UnlockLevel();
 		}
 
 		// refresh all the GUI elements
 		void refreshGUI() {
 			// set the text elements of the UI
 			UIScore.text = "Score: "+score.ToString();
-			
-			// turn on the appropriate number of life indicators in the UI based on the number of lives left
-			for(int i=0;i<UIExtraLives.Length;i++) {
-				if (i<(lives-1)) { // show one less than the number of lives since you only typically show lifes after the current life in UI
-					UIExtraLives[i].SetActive(true);
-				} else {
-					UIExtraLives[i].SetActive(false);
-				}
-			}
 		}
 
 		// public function to add points and update the gui and highscore player prefs accordingly
@@ -138,24 +99,14 @@ namespace Util
 	// public function to remove player life and reset game accordingly
 		public void ResetGame() {
 			// remove life and update GUI
-			lives--;
 			refreshGUI();
-
-			if (lives<=0) { // no more lives
-				// save the current player prefs before going to GameOver
-				PlayerPrefManager.SavePlayerState(score,highscore,lives);
-
-				// load the gameOver screen
-				SceneManager.LoadScene(levelAfterGameOver);
-			} else { // tell the player to respawn
-				// _player.GetComponent<CharacterController2D>().Respawn(_spawnLocation);
-			}
 		}
 
 	// public function for level complete
-		public void LevelCompete() {
+		public void LevelCompete(int levelNumber) {
 			// save the current player prefs before moving to the next level
-			PlayerPrefManager.SavePlayerState(score,highscore,lives);
+			Debug.Log("Finishing score is: " + score);
+			PlayerPrefManager.SavePlayerState(score, levelNumber);
 			
 			// use a coroutine to allow the player to get fanfare before moving to next level
 			StartCoroutine(LoadNextLevel());

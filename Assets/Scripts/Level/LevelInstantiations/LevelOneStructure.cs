@@ -18,6 +18,8 @@ namespace Level.LevelInstantiations
             InstantiateEnemyNotes(4, new ThirdString(), enemyNote4);
             InstantiateEnemyNotes(3, new FifthString(), enemyNote4);
             
+            InstantiateFinish();
+
             IncreaseXPosition();
             
             InstantiateEnemyNotes(4, new FirstString(), enemyNote8);

@@ -3,12 +3,20 @@ using Level.LevelInstantiations;
 using Level.MusicalStrings;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Util
 {
     public class MainMenuManager : MonoBehaviour
     {
-        void Awake() {
+        public Text UIScore;
+        public static MainMenuManager mainMenuManager;
+
+        
+        void Awake()
+        {
+            SetTotalScoreUI();
+            
             if (PlayerPrefs.GetInt("Level") == 0)
             {
                 PlayerPrefs.SetInt("Level", 1);
@@ -17,9 +25,10 @@ namespace Util
         
         public void LoadLevel(int levelToLoad)
         {
-
             if (IsLevelAvailable(levelToLoad))
             {
+                PlayerPrefs.SetInt("l" + levelToLoad, 0);
+                PlayerPrefs.SetInt("CurrentLevel", levelToLoad);
                 SceneManager.LoadScene("Level" + levelToLoad);
             }
             else
@@ -39,6 +48,11 @@ namespace Util
             }
 
             return false;
+        }
+
+        private void SetTotalScoreUI()
+        {
+            UIScore.text = "Total score: " + LevelsPreferences.GetEarnedLevelScores();
         }
     }
 }

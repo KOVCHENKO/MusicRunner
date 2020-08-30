@@ -14,7 +14,7 @@ namespace Level.Menu
         void Start () {
             Debug.Log("Current score is " + PlayerPrefs.GetInt("Score"));
                 
-            if (PlayerPrefs.GetInt("Score") <= 
+            if (LevelsPreferences.GetEarnedLevelScores() <= 
                 LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
             {
                 gameObject.GetComponent<Image>().sprite = levelIsBlockedSprite;

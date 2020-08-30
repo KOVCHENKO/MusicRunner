@@ -1,18 +1,21 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
+using Util;
 
 namespace Level.LevelInstantiations
 {
     public static class LevelsPreferences
     {
-        private static readonly Dictionary<int, int> NecessaryLevelScores;
+        public static Dictionary<int, int> NecessaryLevelScores { get; }
+        private static int EarnedLevelScores;
 
         static LevelsPreferences()
         {
             if (NecessaryLevelScores == null)
             {
                 NecessaryLevelScores = new Dictionary<int, int>();
-                AddNecessaryScore(1, 0);
-                AddNecessaryScore(2, 2000);
+                AddNecessaryScore(1, -1);
+                AddNecessaryScore(2, 20);
                 AddNecessaryScore(3, 3000);
                 AddNecessaryScore(4, 4000);
                 AddNecessaryScore(5, 5000);
@@ -32,5 +35,20 @@ namespace Level.LevelInstantiations
         {
             return NecessaryLevelScores[levelNumber];
         }
+
+        public static int GetEarnedLevelScores()
+        {
+            EarnedLevelScores = 0;
+            
+            for (int i = 1; i <= 6; i++)
+            {
+                Debug.Log("Level : " + 1 + ": " + PlayerPrefs.GetInt("l" + i));
+                EarnedLevelScores += PlayerPrefManager.GetScore(i);
+            }
+
+            Debug.Log("Earner level score: " + EarnedLevelScores);
+            
+            return EarnedLevelScores;
+        } 
     }
 }
