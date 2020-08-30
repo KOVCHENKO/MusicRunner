@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\Picker\PickerController.cs" />
      <Compile Include="Assets\Scripts\UI\StringButtonController.cs" />
      <Compile Include="Assets\Scripts\Util\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Util\GameManagerEditor.cs" />
      <Compile Include="Assets\Scripts\Util\MainMenuManager.cs" />
      <Compile Include="Assets\Scripts\Util\PlayerPrefManager.cs" />
      <Compile Include="Assets\Scripts\Util\ScoreTimer.cs" />
