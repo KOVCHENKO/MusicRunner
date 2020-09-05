@@ -1341,7 +1341,6 @@ MonoBehaviour:
   pause8: {fileID: 0}
   finish: {fileID: 5703447612426249328, guid: c794c88483902b142a3f0d3f3a407d2b, type: 3}
   _initialXPosition: 0
-  levelNumber: 1
 --- !u!114 &1247470493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,7 +1367,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIScore: {fileID: 0}
-  gameInfo: Instancing
 --- !u!1 &1316680167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,7 +2991,7 @@ PrefabInstance:
     - target: {fileID: 3962689283957130185, guid: b250390dc3aee234ca94733bf495b96b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3962689283957130186, guid: b250390dc3aee234ca94733bf495b96b,
         type: 3}
@@ -3128,6 +3126,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848944707655355194, guid: 24c9e0a9633b4bd4ca522532ad859c0c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848944707655355194, guid: 24c9e0a9633b4bd4ca522532ad859c0c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848944707655355194, guid: 24c9e0a9633b4bd4ca522532ad859c0c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c9e0a9633b4bd4ca522532ad859c0c, type: 3}
