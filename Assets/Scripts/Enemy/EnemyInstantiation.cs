@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Level.LevelInstantiations;
 using Level.MusicalStrings;
 using UnityEngine;
+using Util;
 
 namespace Enemy
 {
@@ -19,13 +21,18 @@ namespace Enemy
 
         public GameObject finish;
         public float _initialXPosition = 0;
+        private MainMenuManager mainMenuManager = MainMenuManager.mainMenuManager;
 
 
         public int levelNumber;
 
+
         private void Start()
         {
-            switch (levelNumber)
+            int CurrentLevel = mainMenuManager.currentLevel;
+            Debug.Log("Cur lev: " + CurrentLevel);
+            
+            switch (CurrentLevel)
             {
                 case 1:
                 {

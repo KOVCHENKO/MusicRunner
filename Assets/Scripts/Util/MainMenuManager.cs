@@ -10,11 +10,24 @@ namespace Util
     public class MainMenuManager : MonoBehaviour
     {
         public Text UIScore;
-        public static MainMenuManager mainMenuManager;
 
-        
+        public static MainMenuManager mainMenuManager
+        {
+            get;
+            set;
+        }
+
+        public int currentLevel
+        {
+            get;
+            set;
+        } = 0;
+
         void Awake()
         {
+            DontDestroyOnLoad(gameObject);
+            mainMenuManager = this;
+            
             SetTotalScoreUI();
             
             if (PlayerPrefs.GetInt("Level") == 0)
@@ -25,11 +38,15 @@ namespace Util
         
         public void LoadLevel(int levelToLoad)
         {
+            currentLevel = levelToLoad;
+            
+            // PlayerPrefManager.SaveCurrentLevel(levelToLoad);
+
             if (IsLevelAvailable(levelToLoad))
             {
                 PlayerPrefs.SetInt("l" + levelToLoad, 0);
                 PlayerPrefs.SetInt("CurrentLevel", levelToLoad);
-                SceneManager.LoadScene("Level" + levelToLoad);
+                SceneManager.LoadScene("Level1");
             }
             else
             {

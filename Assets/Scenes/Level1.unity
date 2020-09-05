@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 1247470491}
   - component: {fileID: 1247470492}
   - component: {fileID: 1247470493}
+  - component: {fileID: 1247470494}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1191,11 +1192,8 @@ MonoBehaviour:
   levelAfterVictory: Menu
   levelAfterGameOver: Menu
   score: 0
-  highscore: 0
-  startLives: 3
-  lives: 3
+  currentGameLevel: 0
   UIScore: {fileID: 668630944}
-  UIExtraLives: []
 --- !u!4 &1247470489
 Transform:
   m_ObjectHideFlags: 0
@@ -1357,6 +1355,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIGamePaused: {fileID: 1316680167}
+--- !u!114 &1247470494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247470487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45cd84a42bfa4ed1a036f376fa9e3f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIScore: {fileID: 0}
+  gameInfo: Instancing
 --- !u!1 &1316680167
 GameObject:
   m_ObjectHideFlags: 0
