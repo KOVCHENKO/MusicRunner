@@ -24,9 +24,6 @@ namespace Enemy
         private MainMenuManager mainMenuManager = MainMenuManager.mainMenuManager;
 
 
-        public int levelNumber;
-
-
         private void Start()
         {
             int CurrentLevel = mainMenuManager.currentLevel;

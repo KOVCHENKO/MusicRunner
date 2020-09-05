@@ -21,7 +21,8 @@ namespace Picker
 
         private void Awake()
         {
-            // get a reference to the components we are going to be changing and store a reference for efficiency purposes
+            _animator = GetComponent<Animator>();
+            
             _transform = GetComponent<Transform> ();
 		
             _rigidbody2D = GetComponent<Rigidbody2D> ();
@@ -51,10 +52,11 @@ namespace Picker
         
         public void FreezeMotion() {
             Debug.Log("Level has been won");
-            
             constantMoving = false;
             _rigidbody2D.velocity = new Vector2(0,0);
             _rigidbody2D.isKinematic = true;
+            
+            _animator.SetTrigger("hasWin");
         }
     }
 }

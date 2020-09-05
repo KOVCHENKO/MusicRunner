@@ -15,7 +15,7 @@ namespace Level.LevelInstantiations
             {
                 NecessaryLevelScores = new Dictionary<int, int>();
                 AddNecessaryScore(1, -1);
-                AddNecessaryScore(2, 20);
+                AddNecessaryScore(2, -1);
                 AddNecessaryScore(3, 3000);
                 AddNecessaryScore(4, 4000);
                 AddNecessaryScore(5, 5000);

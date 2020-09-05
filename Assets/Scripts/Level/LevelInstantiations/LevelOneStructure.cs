@@ -8,8 +8,10 @@ namespace Level.LevelInstantiations
     {
         public void CreateLevelElements()
         {
+
             InstantiateEnemyNotes(4, new SecondString(), enemyNote4);
             InstantiateEnemyNotes(4, new ForthString(), enemyNote4);
+            InstantiateFinish();
             InstantiateEnemyNotes(4, new FirstString(), enemyNote4);
             InstantiateEnemyNotes(4, new ThirdString(), enemyNote4);
             InstantiateEnemyNotes(4, new FifthString(), enemyNote4);
@@ -18,7 +20,6 @@ namespace Level.LevelInstantiations
             InstantiateEnemyNotes(4, new ThirdString(), enemyNote4);
             InstantiateEnemyNotes(3, new FifthString(), enemyNote4);
             
-            InstantiateFinish();
 
             IncreaseXPosition();
             

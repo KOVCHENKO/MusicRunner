@@ -25,23 +25,15 @@ namespace Util
 
         void Awake()
         {
-            DontDestroyOnLoad(gameObject);
             mainMenuManager = this;
             
             SetTotalScoreUI();
-            
-            if (PlayerPrefs.GetInt("Level") == 0)
-            {
-                PlayerPrefs.SetInt("Level", 1);
-            }
         }
         
         public void LoadLevel(int levelToLoad)
         {
             currentLevel = levelToLoad;
             
-            // PlayerPrefManager.SaveCurrentLevel(levelToLoad);
-
             if (IsLevelAvailable(levelToLoad))
             {
                 PlayerPrefs.SetInt("l" + levelToLoad, 0);
@@ -56,8 +48,6 @@ namespace Util
 
         private bool IsLevelAvailable(int levelToLoad)
         {
-            Debug.Log("Max level in prefs: " + PlayerPrefs.GetInt("Level"));
-
             if (PlayerPrefs.GetInt("Score") >= LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
             {
                 Debug.Log("Current min level: " + levelToLoad);

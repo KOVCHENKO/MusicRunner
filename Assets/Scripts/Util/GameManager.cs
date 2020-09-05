@@ -24,6 +24,13 @@ namespace Util
 		// private variables
 		GameObject _player;
 		Scene _scene;
+		
+		// Audio Source
+		public AudioSource AudioSource
+		{
+			get;
+			set;
+		}
 
 		// set things up here
 		void Awake () {
@@ -33,20 +40,8 @@ namespace Util
 
 			// setup all the variables, the UI, and provide errors if things not setup properly.
 			setupDefaults();
-		}
-
-		// game loop
-		void Update() {
-			// if ESC pressed then pause the game
-			if (Input.GetKeyDown(KeyCode.Escape)) {
-				if (Time.timeScale > 0f) {
-					// UIGamePaused.SetActive(true); // this brings up the pause UI
-					Time.timeScale = 0f; // this pauses the game action
-				} else {
-					Time.timeScale = 1f; // this unpauses the game action (ie. back to normal)
-					// UIGamePaused.SetActive(false); // remove the pause UI
-				}
-			}
+			
+			AudioSource = GetComponent<AudioSource>();
 		}
 
 		// setup all the variables, the UI, and provide errors if things not setup properly.

@@ -1,4 +1,5 @@
-﻿using Enemy;
+﻿using System;
+using Enemy;
 using Picker;
 using UnityEngine;
 using Util;
@@ -19,8 +20,10 @@ namespace Level
 
         private void WinLevel(Collider2D other)
         {
+            GameManager.gm.AudioSource.Stop();
             other.gameObject.GetComponent<PickerController>().FreezeMotion();
             GameManager.gm.LevelCompete(PlayerPrefs.GetInt("CurrentLevel"));
+            
         }
     }
 }
