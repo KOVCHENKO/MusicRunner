@@ -39,26 +39,12 @@ namespace Enemy
 
             switch (currentLevel)
             {
-                case 1:
-                {
-                    levelStructure = gameObject.AddComponent<LevelOneStructure>();
-                    break;
-                }
-                case 2:
-                {
-                    levelStructure = gameObject.AddComponent<LevelTwoStructure>();
-                    break;
-                }
-                case 3:
-                {
-                    levelStructure = gameObject.AddComponent<LevelThreeStructure>();
-                    break;
-                }
-                case 4:
-                {
-                    levelStructure = gameObject.AddComponent<LevelFourStructure>();
-                    break;
-                }
+                case 1: { levelStructure = gameObject.AddComponent<LevelOneStructure>(); break; }
+                case 2: { levelStructure = gameObject.AddComponent<LevelTwoStructure>(); break; }
+                case 3: { levelStructure = gameObject.AddComponent<LevelThreeStructure>(); break; }
+                case 4: { levelStructure = gameObject.AddComponent<LevelFourStructure>(); break; }
+                case 5: { levelStructure = gameObject.AddComponent<LevelFiveStructure>(); break; }
+                case 6: { levelStructure = gameObject.AddComponent<LevelSixStructure>(); break; }
             }
 
             ProvideGameObjects(levelStructure);

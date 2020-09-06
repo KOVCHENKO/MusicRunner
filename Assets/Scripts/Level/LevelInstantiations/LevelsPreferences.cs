@@ -17,10 +17,10 @@ namespace Level.LevelInstantiations
                 NecessaryLevelScores = new Dictionary<int, int>();
                 AddNecessaryScore(1, -1);
                 AddNecessaryScore(2, -1);
-                AddNecessaryScore(3, 3000);
-                AddNecessaryScore(4, 4000);
-                AddNecessaryScore(5, 5000);
-                AddNecessaryScore(6, 6000);
+                AddNecessaryScore(3, -1);
+                AddNecessaryScore(4, -1);
+                AddNecessaryScore(5, -1);
+                AddNecessaryScore(6, -1);
             }
             
             if (LevelMusic == null)
@@ -29,8 +29,8 @@ namespace Level.LevelInstantiations
                 AddLevelMusic(1);
                 AddLevelMusic(2);
                 AddLevelMusic(3);
-                AddLevelMusic(3);
-                AddLevelMusic(3);
+                AddLevelMusic(4);
+                AddLevelMusic(5);
                 AddLevelMusic(3);
             }
         }
