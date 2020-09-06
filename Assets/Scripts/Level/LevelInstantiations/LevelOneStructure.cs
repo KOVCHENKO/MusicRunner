@@ -1,6 +1,5 @@
 ﻿using Enemy;
 using Level.MusicalStrings;
-using UnityEngine;
 
 namespace Level.LevelInstantiations
 {
@@ -11,7 +10,7 @@ namespace Level.LevelInstantiations
 
             InstantiateEnemyNotes(4, new SecondString(), enemyNote4);
             InstantiateEnemyNotes(4, new ForthString(), enemyNote4);
-            InstantiateFinish();
+            // InstantiateFinish();
             InstantiateEnemyNotes(4, new FirstString(), enemyNote4);
             InstantiateEnemyNotes(4, new ThirdString(), enemyNote4);
             InstantiateEnemyNotes(4, new FifthString(), enemyNote4);

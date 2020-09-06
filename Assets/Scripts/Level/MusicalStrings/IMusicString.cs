@@ -4,6 +4,10 @@ namespace Level.MusicalStrings
 {
     public abstract class IMusicString
     {
+        public int TransparencyValue { get; } = 100;
+        
+        public abstract string StringName { get; }
+        
         public abstract int Number { get; }
         
         public abstract float YCoord{ get; }
