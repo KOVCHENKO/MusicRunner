@@ -9,6 +9,7 @@ TagManager:
   - String
   - Pause
   - Note
+  - Buttons
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Enemy
   - Picker
   - Strings
-  - 
+  - Pause
   - 
   - 
   - 
