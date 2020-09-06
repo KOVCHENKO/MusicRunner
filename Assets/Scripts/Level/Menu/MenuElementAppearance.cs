@@ -9,11 +9,36 @@ namespace Level.Menu
     {
         public Sprite levelIsBlockedSprite;
         public int levelToLoad;
-        // public MainMenuManager mainMenuManager;
         
         void Start () {
             Debug.Log("Current score is " + PlayerPrefs.GetInt("Score"));
-                
+            
+            IsBlocked();
+            IsleftToOpen();
+           
+            
+        }
+
+        private void IsleftToOpen()
+        {
+            GameObject ChildGameObject = transform.GetChild(0).gameObject;
+            Text thisIsText = ChildGameObject.GetComponent<Text>();
+
+            int necessaryScore = (LevelsPreferences.GetEarnedLevelScores() -
+                                  LevelsPreferences.GetLevelScoresToLoad(levelToLoad)) * -1;
+
+            if (LevelsPreferences.GetEarnedLevelScores() <= 
+                LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
+            {
+                thisIsText.text = necessaryScore.ToString() + " more";
+            }
+            else
+            {
+                thisIsText.text = PlayerPrefManager.GetScore(levelToLoad).ToString() + " earned";
+            }
+        }
+
+        private void IsBlocked() {
             if (LevelsPreferences.GetEarnedLevelScores() <= 
                 LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
             {
@@ -21,4 +46,6 @@ namespace Level.Menu
             }
         }
     }
+    
+  
 }

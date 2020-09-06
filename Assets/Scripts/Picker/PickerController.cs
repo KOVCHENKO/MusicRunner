@@ -51,12 +51,12 @@ namespace Picker
         }
         
         public void FreezeMotion() {
+            _animator.SetBool("hasWin", true);
+
             Debug.Log("Level has been won");
             constantMoving = false;
             _rigidbody2D.velocity = new Vector2(0,0);
             _rigidbody2D.isKinematic = true;
-            
-            _animator.SetTrigger("hasWin");
         }
     }
 }

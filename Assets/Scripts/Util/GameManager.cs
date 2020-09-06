@@ -109,7 +109,7 @@ namespace Util
 
 		// load the nextLevel after delay
 		IEnumerator LoadNextLevel() {
-			yield return new WaitForSeconds(3.5f);
+			yield return new WaitForSeconds(2.5f);
 			Debug.Log("Scene after victory: " + levelAfterVictory);
 			SceneManager.LoadScene(levelAfterVictory);
 		}
