@@ -28,32 +28,30 @@ namespace Enemy
         {
             int CurrentLevel = mainMenuManager.currentLevel;
             Debug.Log("Cur lev: " + CurrentLevel);
+
+            EnemyInstantiation levelStructure = null;
             
             switch (CurrentLevel)
             {
                 case 1:
                 {
-                    LevelOneStructure levelStructure = gameObject.AddComponent<LevelOneStructure>();
-                    ProvideGameObjects(levelStructure);
-                    levelStructure.CreateLevelElements();
+                    levelStructure = gameObject.AddComponent<LevelOneStructure>();
                     break;
                 }
                 case 2:
                 {
-                    LevelTwoStructure levelStructure = gameObject.AddComponent<LevelTwoStructure>();
-                    ProvideGameObjects(levelStructure);
-                    levelStructure.CreateLevelElements();
+                    levelStructure = gameObject.AddComponent<LevelTwoStructure>();
                     break;
                 }
                 case 3:
                 {
-                    LevelThreeStructure levelStructure = gameObject.AddComponent<LevelThreeStructure>();
-                    ProvideGameObjects(levelStructure);
-                    levelStructure.CreateLevelElements();
+                    levelStructure = gameObject.AddComponent<LevelThreeStructure>();
                     break;
                 }
             }
 
+            ProvideGameObjects(levelStructure);
+            levelStructure.CreateLevelElements();
         }
 
         // TODO: Transfer to separate classes
@@ -161,6 +159,10 @@ namespace Enemy
             levelStructure.pause8 = pause8;
             levelStructure.finish = finish;
         }
-        
+
+        public virtual void CreateLevelElements()
+        {
+            throw new NotImplementedException("Implementation is available in LevelStructure Classes");
+        }
     }
 }

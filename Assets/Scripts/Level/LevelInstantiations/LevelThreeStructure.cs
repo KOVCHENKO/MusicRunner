@@ -8,7 +8,7 @@ namespace Level.LevelInstantiations
 {
     public class LevelThreeStructure: EnemyInstantiation
     {
-        public void CreateLevelElements()
+        public override void CreateLevelElements()
         {
             InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
             {

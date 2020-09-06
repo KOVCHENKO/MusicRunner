@@ -7,7 +7,7 @@ namespace Level.LevelInstantiations
 {
     public class LevelTwoStructure: EnemyInstantiation
     {
-        public void CreateLevelElements()
+        public override void CreateLevelElements()
         {
             InstantiateEnemyNotes(4, new SecondString(), enemyNote2);
             InstantiateEnemyNotes(4, new FirstString(), enemyNote2);
