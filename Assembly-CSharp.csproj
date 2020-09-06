@@ -62,10 +62,10 @@
      <Compile Include="Assets\Scripts\Camera\CameraMoveController.cs" />
      <Compile Include="Assets\Scripts\Enemy\BreakStringTouched.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttacked.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyInstantiation.cs" />
      <Compile Include="Assets\Scripts\Level\CountdownController.cs" />
      <Compile Include="Assets\Scripts\Level\Finish.cs" />
      <Compile Include="Assets\Scripts\Level\LevelController.cs" />
+     <Compile Include="Assets\Scripts\Level\LevelInstantiation.cs" />
      <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelOneStructure.cs" />
      <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelThreeStructure.cs" />
      <Compile Include="Assets\Scripts\Level\LevelInstantiations\LevelTwoStructure.cs" />

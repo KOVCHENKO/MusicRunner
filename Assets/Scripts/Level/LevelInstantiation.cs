@@ -7,7 +7,7 @@ using Util;
 
 namespace Enemy
 {
-    public class EnemyInstantiation : MonoBehaviour
+    public class LevelInstantiation : MonoBehaviour
     {
         // Scores +
         public GameObject enemyNote8;
@@ -29,7 +29,7 @@ namespace Enemy
             int CurrentLevel = mainMenuManager.currentLevel;
             Debug.Log("Cur lev: " + CurrentLevel);
 
-            EnemyInstantiation levelStructure = null;
+            LevelInstantiation levelStructure = null;
             
             switch (CurrentLevel)
             {
@@ -149,7 +149,7 @@ namespace Enemy
             Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0), Quaternion.identity);
         }
 
-        public void ProvideGameObjects(EnemyInstantiation levelStructure)
+        public void ProvideGameObjects(LevelInstantiation levelStructure)
         {
             levelStructure.enemyNote2 = enemyNote2;
             levelStructure.enemyNote4 = enemyNote4;

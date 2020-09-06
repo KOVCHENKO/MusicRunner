@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Level.LevelInstantiations
 {
-    public class LevelTwoStructure: EnemyInstantiation
+    public class LevelTwoStructure: LevelInstantiation
     {
         public override void CreateLevelElements()
         {
