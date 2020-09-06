@@ -54,6 +54,11 @@ namespace Enemy
                     levelStructure = gameObject.AddComponent<LevelThreeStructure>();
                     break;
                 }
+                case 4:
+                {
+                    levelStructure = gameObject.AddComponent<LevelFourStructure>();
+                    break;
+                }
             }
 
             ProvideGameObjects(levelStructure);
