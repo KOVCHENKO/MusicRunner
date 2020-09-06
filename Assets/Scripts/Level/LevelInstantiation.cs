@@ -23,15 +23,21 @@ namespace Enemy
         public float _initialXPosition = 0;
         private MainMenuManager mainMenuManager = MainMenuManager.mainMenuManager;
 
+        private AudioSource _audioSource;
+
+        void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
 
         private void Start()
         {
-            int CurrentLevel = mainMenuManager.currentLevel;
-            Debug.Log("Cur lev: " + CurrentLevel);
+            int currentLevel = mainMenuManager.currentLevel;
+            Debug.Log("Cur lev: " + currentLevel);
 
             LevelInstantiation levelStructure = null;
-            
-            switch (CurrentLevel)
+
+            switch (currentLevel)
             {
                 case 1:
                 {
@@ -51,7 +57,8 @@ namespace Enemy
             }
 
             ProvideGameObjects(levelStructure);
-            levelStructure.CreateLevelElements();
+            ProvideLevelSound(currentLevel);
+            if (levelStructure != null) levelStructure.CreateLevelElements();
         }
 
         // TODO: Transfer to separate classes
@@ -72,14 +79,16 @@ namespace Enemy
             }
         }
 
-        private void MultipleInstantiationResolver(int count, Dictionary<IMusicString, GameObject> musicElementsOnString, float multiplicator)
+        private void MultipleInstantiationResolver(int count,
+            Dictionary<IMusicString, GameObject> musicElementsOnString, float multiplicator)
         {
             for (int x = 0; x < count; x++)
             {
                 foreach (var musicElementOnString in musicElementsOnString)
                 {
                     Instantiate(musicElementOnString.Value,
-                        new Vector3(_initialXPosition * multiplicator, musicElementOnString.Key.GetEnemyNoteYCoord(musicElementOnString.Value), 0),
+                        new Vector3(_initialXPosition * multiplicator,
+                            musicElementOnString.Key.GetEnemyNoteYCoord(musicElementOnString.Value), 0),
                         Quaternion.identity);
                 }
 
@@ -92,7 +101,8 @@ namespace Enemy
             if (enemyNoteType == enemyNote8 || enemyNoteType == pause8)
             {
                 SingleInstantiationResolver(count, stringNumber, enemyNoteType, 3f / 2);
-            } else if (enemyNoteType == enemyNote4 || enemyNoteType == pause4)
+            }
+            else if (enemyNoteType == enemyNote4 || enemyNoteType == pause4)
             {
                 SingleInstantiationResolver(count, stringNumber, enemyNoteType, 3f);
             }
@@ -102,11 +112,14 @@ namespace Enemy
             }
         }
 
-        private void SingleInstantiationResolver(int count, IMusicString stringNumber, GameObject enemyNoteType, float multiplier)
+        private void SingleInstantiationResolver(int count, IMusicString stringNumber, GameObject enemyNoteType,
+            float multiplier)
         {
             for (int x = 0; x < count; x++)
             {
-                Instantiate(enemyNoteType, new Vector3(_initialXPosition * multiplier, stringNumber.GetEnemyNoteYCoord(enemyNoteType), 0), Quaternion.identity);
+                Instantiate(enemyNoteType,
+                    new Vector3(_initialXPosition * multiplier, stringNumber.GetEnemyNoteYCoord(enemyNoteType), 0),
+                    Quaternion.identity);
                 _initialXPosition += 1f;
             }
         }
@@ -119,26 +132,30 @@ namespace Enemy
                 {
                     _initialXPosition += 1f;
                 }
-            } else if (noteType == 4) {
+            }
+            else if (noteType == 4)
+            {
                 for (int x = 0; x < count; x++)
                 {
                     _initialXPosition += 1f * 2;
-                }    
-            } else if (noteType == 2) {
+                }
+            }
+            else if (noteType == 2)
+            {
                 for (int x = 0; x < count; x++)
                 {
                     _initialXPosition += 1f * 4;
                 }
             }
-            
-            
+
+
         }
-        
+
         protected void IncreaseXPosition()
         {
             _initialXPosition *= 2;
         }
-        
+
         protected void ReduceXPosition()
         {
             _initialXPosition /= 2;
@@ -146,7 +163,16 @@ namespace Enemy
 
         protected void InstantiateFinish()
         {
-            Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0), Quaternion.identity);
+            Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0),
+                Quaternion.identity);
+        }
+
+        public void ProvideLevelSound(int levelNumber)
+        {
+            AudioClip clip1 = (AudioClip) Resources.Load(
+                LevelsPreferences.GetLevelMusicToLoad(levelNumber)
+            );
+            _audioSource.clip = clip1;
         }
 
         public void ProvideGameObjects(LevelInstantiation levelStructure)

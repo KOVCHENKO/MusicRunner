@@ -7,6 +7,7 @@ namespace Level.LevelInstantiations
     public static class LevelsPreferences
     {
         public static Dictionary<int, int> NecessaryLevelScores { get; }
+        public static Dictionary<int, string> LevelMusic { get; }
         private static int EarnedLevelScores;
 
         static LevelsPreferences()
@@ -21,6 +22,17 @@ namespace Level.LevelInstantiations
                 AddNecessaryScore(5, 5000);
                 AddNecessaryScore(6, 6000);
             }
+            
+            if (LevelMusic == null)
+            {
+                LevelMusic = new Dictionary<int, string>();
+                AddLevelMusic(1);
+                AddLevelMusic(2);
+                AddLevelMusic(3);
+                AddLevelMusic(3);
+                AddLevelMusic(3);
+                AddLevelMusic(3);
+            }
         }
 
         private static void AddNecessaryScore(int key, int value)
@@ -30,10 +42,23 @@ namespace Level.LevelInstantiations
                 NecessaryLevelScores.Add(key, value);
             }
         }
+
+        private static void AddLevelMusic(int trackNumber)
+        {
+            if (!LevelMusic.ContainsKey(trackNumber))
+            {
+                LevelMusic.Add(trackNumber, "Music/Track" + trackNumber);
+            }
+        }
         
         public static int GetLevelScoresToLoad(int levelNumber)
         {
             return NecessaryLevelScores[levelNumber];
+        }
+        
+        public static string GetLevelMusicToLoad(int trackNumber)
+        {
+            return LevelMusic[trackNumber];
         }
 
         public static int GetEarnedLevelScores()
@@ -49,6 +74,7 @@ namespace Level.LevelInstantiations
             Debug.Log("Earner level score: " + EarnedLevelScores);
             
             return EarnedLevelScores;
-        } 
+        }
+
     }
 }
