@@ -8,6 +8,8 @@ namespace Level.LevelInstantiations
 {
     public class LevelFiveStructure: LevelInstantiation
     {
+        public override int maxLevelScore { get; set; } = 0;
+
         public override void CreateLevelElements()
         {
             InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
@@ -134,6 +136,8 @@ namespace Level.LevelInstantiations
                 { new ForthString(), pause2 },
                 { new FifthString(), pause2 },
             }, enemyNote2);
+            CountPointsForInstantiation(30, 2);
+
             
             IncreaseXPosition();
             IncreaseXPosition();
