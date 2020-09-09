@@ -85,7 +85,10 @@ namespace Util
 		public void AddPoints(int amount)
 		{
 			// increase score
-			score+=amount;
+			// TODO: Not researched case: score is multiplied
+			if (amount == 8) score+=amount / 4;
+			if (amount == 2) score+=amount / 2;
+			if (amount == 4) score+=amount / 2;
 
 			// update UI
 			UIScore.text = "Score: " + score.ToString();

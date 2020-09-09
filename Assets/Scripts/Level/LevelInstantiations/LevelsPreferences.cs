@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Enemy;
 using UnityEngine;
 using Util;
 
@@ -15,12 +16,12 @@ namespace Level.LevelInstantiations
             if (NecessaryLevelScores == null)
             {
                 NecessaryLevelScores = new Dictionary<int, int>();
-                AddNecessaryScore(1, -1);
-                AddNecessaryScore(2, -1);
-                AddNecessaryScore(3, -1);
-                AddNecessaryScore(4, -1);
-                AddNecessaryScore(5, -1);
-                AddNecessaryScore(6, -1);
+                if (!NecessaryLevelScores.ContainsKey(1)) { NecessaryLevelScores.Add(1, -1); }
+                AddNecessaryScore(2);
+                AddNecessaryScore(3);
+                AddNecessaryScore(4);
+                AddNecessaryScore(5);
+                AddNecessaryScore(6);
             }
             
             if (LevelMusic == null)
@@ -35,11 +36,30 @@ namespace Level.LevelInstantiations
             }
         }
 
-        private static void AddNecessaryScore(int key, int value)
+        private static void AddNecessaryScore(int key)
         {
             if (!NecessaryLevelScores.ContainsKey(key))
             {
-                NecessaryLevelScores.Add(key, value);
+                // Calculate necessary score
+                int scoresRemainToLoad = 0;
+                Dictionary<int, LevelInstantiation> allAvailableLevelInstances = GetAllAvailableLevelInstances();
+                for (int i = 1; i < key; i++)
+                {
+                    int maxLevelScore = 0;
+                    
+                    allAvailableLevelInstances[i].isForCountPointsOnly = true;
+                    allAvailableLevelInstances[i].CreateLevelElements();
+                    maxLevelScore = allAvailableLevelInstances[i].maxLevelScore;
+                    Debug.Log("Max level score for level: " + allAvailableLevelInstances[i] + "is: " + maxLevelScore);
+                    
+                    scoresRemainToLoad += maxLevelScore;
+                }
+                
+                // Decrease by 10%
+                scoresRemainToLoad -= scoresRemainToLoad / 10;
+                Debug.Log("Score remain to load for level: " + key + " is: " + scoresRemainToLoad);
+                
+                NecessaryLevelScores.Add(key, scoresRemainToLoad);
             }
         }
 
@@ -75,6 +95,20 @@ namespace Level.LevelInstantiations
             
             return EarnedLevelScores;
         }
-
+        
+        
+        public static Dictionary<int, LevelInstantiation> GetAllAvailableLevelInstances()
+        {
+            GameObject gameObject = new GameObject();
+            Dictionary<int, LevelInstantiation> allAvailableLevelInstances = new Dictionary<int, LevelInstantiation>();
+            allAvailableLevelInstances.Add(1, gameObject.AddComponent<LevelOneStructure>());
+            allAvailableLevelInstances.Add(2, gameObject.AddComponent<LevelTwoStructure>());
+            allAvailableLevelInstances.Add(3, gameObject.AddComponent<LevelThreeStructure>());
+            allAvailableLevelInstances.Add(4, gameObject.AddComponent<LevelFourStructure>());
+            allAvailableLevelInstances.Add(5, gameObject.AddComponent<LevelFiveStructure>());
+            allAvailableLevelInstances.Add(6, gameObject.GetComponent<LevelSixStructure>());
+        
+            return allAvailableLevelInstances;
+        }
     }
 }

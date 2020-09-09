@@ -25,6 +25,10 @@ namespace Enemy
 
         private AudioSource _audioSource;
 
+        // For counting max score
+        public virtual int maxLevelScore { get; set; }
+        public bool isForCountPointsOnly { get; set; } = false;
+
         void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
@@ -47,15 +51,19 @@ namespace Enemy
                 case 6: { levelStructure = gameObject.AddComponent<LevelSixStructure>(); break; }
             }
 
-            ProvideGameObjects(levelStructure);
-            ProvideLevelSound(currentLevel);
+            if (currentLevel != 0)
+            {
+                ProvideGameObjects(levelStructure);
+                ProvideLevelSound(currentLevel);
+            }
             if (levelStructure != null) levelStructure.CreateLevelElements();
         }
 
-        // TODO: Transfer to separate classes
         public void InstantiateEnemyNotesOnDifferentLines(int count,
             Dictionary<IMusicString, GameObject> musicElementsOnString, GameObject enemyNoteType)
         {
+            if (isForCountPointsOnly) return;
+            
             if (enemyNoteType == enemyNote8 || enemyNoteType == pause8)
             {
                 MultipleInstantiationResolver(count, musicElementsOnString, 3f / 2);
@@ -87,8 +95,14 @@ namespace Enemy
             }
         }
 
-        public void InstantiateEnemyNotes(int count, IMusicString stringNumber, GameObject enemyNoteType)
+        public void InstantiateEnemyNotes(int count, IMusicString stringNumber, GameObject enemyNoteType, int points)
         {
+            if (isForCountPointsOnly)
+            {
+                CountPointsForInstantiation(count, points);
+                return;
+            }
+            
             if (enemyNoteType == enemyNote8 || enemyNoteType == pause8)
             {
                 SingleInstantiationResolver(count, stringNumber, enemyNoteType, 3f / 2);
@@ -100,6 +114,24 @@ namespace Enemy
             else if (enemyNoteType == enemyNote2 || enemyNoteType == pause2)
             {
                 SingleInstantiationResolver(count, stringNumber, enemyNoteType, 3f * 2);
+            }
+        }
+
+        public void CountPointsForInstantiation(int count, int points)
+        {
+            switch (points)
+            {
+                case 2:
+                    maxLevelScore += 2 * count;
+                    break;
+                case 4:
+                    maxLevelScore += 4 * count;
+                    break;
+                case 8:
+                    maxLevelScore += 8 * count;
+                    break;
+                default:
+                    throw new Exception("Such note type is not available yet");
             }
         }
 
@@ -115,33 +147,6 @@ namespace Enemy
             }
         }
 
-        public void InsertBlankSpace(int count, int noteType)
-        {
-            if (noteType == 8)
-            {
-                for (int x = 0; x < count; x++)
-                {
-                    _initialXPosition += 1f;
-                }
-            }
-            else if (noteType == 4)
-            {
-                for (int x = 0; x < count; x++)
-                {
-                    _initialXPosition += 1f * 2;
-                }
-            }
-            else if (noteType == 2)
-            {
-                for (int x = 0; x < count; x++)
-                {
-                    _initialXPosition += 1f * 4;
-                }
-            }
-
-
-        }
-
         protected void IncreaseXPosition()
         {
             _initialXPosition *= 2;
@@ -154,8 +159,10 @@ namespace Enemy
 
         protected void InstantiateFinish()
         {
-            Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0),
-                Quaternion.identity);
+            if (isForCountPointsOnly) return;
+            
+            Instantiate(finish, new Vector3(_initialXPosition * 1.5f, finish.transform.position.y, 0), 
+            Quaternion.identity);
         }
 
         public void ProvideLevelSound(int levelNumber)
