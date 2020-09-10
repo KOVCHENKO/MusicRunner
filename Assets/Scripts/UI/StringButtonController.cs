@@ -20,7 +20,6 @@ namespace UI
             {
                 IMusicString musicStringForColorChange = MusicStringResolver.ResolveMusicString(i);
                 GameObject musicStringObjTransparent = GameObject.Find(musicStringForColorChange.StringName);
-                Debug.Log("Current string name " + musicStringObjTransparent.name);
                 musicStringObjTransparent.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, (float) 0.3);
             }
             

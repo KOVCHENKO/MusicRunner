@@ -15,12 +15,11 @@ namespace Level.Menu
             
             IsBlocked();
             IsleftToOpen();
-           
-            
         }
 
         private void IsleftToOpen()
         {
+            // Object name: ScoreLeft
             GameObject ChildGameObject = transform.GetChild(0).gameObject;
             Text thisIsText = ChildGameObject.GetComponent<Text>();
 
@@ -43,6 +42,8 @@ namespace Level.Menu
                 LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
             {
                 gameObject.GetComponent<Image>().sprite = levelIsBlockedSprite;
+                // Object name: LevelNumber
+                transform.GetChild(1).gameObject.GetComponent<Text>().text = "";
             }
         }
     }
