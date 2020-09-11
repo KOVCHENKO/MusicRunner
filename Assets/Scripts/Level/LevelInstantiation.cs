@@ -28,9 +28,12 @@ namespace Enemy
         // For counting max score
         public virtual int maxLevelScore { get; set; }
         public bool isForCountPointsOnly { get; set; } = false;
+        // Exposed to unity editor
+        public bool countOnly = false;
 
         void Awake()
         {
+            isForCountPointsOnly = countOnly;
             _audioSource = GetComponent<AudioSource>();
         }
 
@@ -49,6 +52,18 @@ namespace Enemy
                 case 4: { levelStructure = gameObject.AddComponent<LevelFourStructure>(); break; }
                 case 5: { levelStructure = gameObject.AddComponent<LevelFiveStructure>(); break; }
                 case 6: { levelStructure = gameObject.AddComponent<LevelSixStructure>(); break; }
+                case 7: { levelStructure = gameObject.AddComponent<LevelSevenStructure>(); break; }
+                case 8: { levelStructure = gameObject.AddComponent<LevelEightStructure>(); break; }
+                case 9: { levelStructure = gameObject.AddComponent<LevelNineStructure>(); break; }
+                case 10: { levelStructure = gameObject.AddComponent<LevelTenStructure>(); break; }
+                case 11: { levelStructure = gameObject.AddComponent<LevelElevenStructure>(); break; }
+                case 12: { levelStructure = gameObject.AddComponent<LevelTwelveStructure>(); break; }
+                case 13: { levelStructure = gameObject.AddComponent<LevelThirteenStructure>(); break; }
+                case 14: { levelStructure = gameObject.AddComponent<LevelFourteenStructure>(); break; }
+                case 15: { levelStructure = gameObject.AddComponent<LevelFifteenStructure>(); break; }
+                case 16: { levelStructure = gameObject.AddComponent<LevelSixteenStructure>(); break; }
+                case 17: { levelStructure = gameObject.AddComponent<LevelSeventeenStructure>(); break; }
+                case 18: { levelStructure = gameObject.AddComponent<LevelEighteenStructure>(); break; }
             }
 
             if (currentLevel != 0)

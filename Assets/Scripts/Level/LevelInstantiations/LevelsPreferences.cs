@@ -22,11 +22,37 @@ namespace Level.LevelInstantiations
                 AddNecessaryScore(4);
                 AddNecessaryScore(5);
                 AddNecessaryScore(6);
+                AddNecessaryScore(7);
+                AddNecessaryScore(8);
+                AddNecessaryScore(9);
+                AddNecessaryScore(10);
+                AddNecessaryScore(11);
+                AddNecessaryScore(12);
+                AddNecessaryScore(13);
+                AddNecessaryScore(14);
+                AddNecessaryScore(15);
+                AddNecessaryScore(16);
+                AddNecessaryScore(17);
+                AddNecessaryScore(18);
             }
             
             if (LevelMusic == null)
             {
                 LevelMusic = new Dictionary<int, string>();
+                AddLevelMusic(1);
+                AddLevelMusic(2);
+                AddLevelMusic(3);
+                AddLevelMusic(4);
+                AddLevelMusic(5);
+                AddLevelMusic(3);
+                
+                AddLevelMusic(1);
+                AddLevelMusic(2);
+                AddLevelMusic(3);
+                AddLevelMusic(4);
+                AddLevelMusic(5);
+                AddLevelMusic(3);
+                
                 AddLevelMusic(1);
                 AddLevelMusic(2);
                 AddLevelMusic(3);
@@ -106,7 +132,19 @@ namespace Level.LevelInstantiations
             allAvailableLevelInstances.Add(3, gameObject.AddComponent<LevelThreeStructure>());
             allAvailableLevelInstances.Add(4, gameObject.AddComponent<LevelFourStructure>());
             allAvailableLevelInstances.Add(5, gameObject.AddComponent<LevelFiveStructure>());
-            allAvailableLevelInstances.Add(6, gameObject.GetComponent<LevelSixStructure>());
+            allAvailableLevelInstances.Add(6, gameObject.AddComponent<LevelSixStructure>());
+            allAvailableLevelInstances.Add(7, gameObject.AddComponent<LevelSevenStructure>());
+            allAvailableLevelInstances.Add(8, gameObject.AddComponent<LevelEightStructure>());
+            allAvailableLevelInstances.Add(9, gameObject.AddComponent<LevelNineStructure>());
+            allAvailableLevelInstances.Add(10, gameObject.AddComponent<LevelTenStructure>());
+            allAvailableLevelInstances.Add(11, gameObject.AddComponent<LevelElevenStructure>());
+            allAvailableLevelInstances.Add(12, gameObject.AddComponent<LevelTwelveStructure>());
+            allAvailableLevelInstances.Add(13, gameObject.AddComponent<LevelThirteenStructure>());
+            allAvailableLevelInstances.Add(14, gameObject.AddComponent<LevelFourteenStructure>());
+            allAvailableLevelInstances.Add(15, gameObject.AddComponent<LevelFifteenStructure>());
+            allAvailableLevelInstances.Add(16, gameObject.AddComponent<LevelSixteenStructure>());
+            allAvailableLevelInstances.Add(17, gameObject.AddComponent<LevelSeventeenStructure>());
+            allAvailableLevelInstances.Add(18, gameObject.AddComponent<LevelEighteenStructure>());
         
             return allAvailableLevelInstances;
         }
