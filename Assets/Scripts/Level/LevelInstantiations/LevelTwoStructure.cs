@@ -9,8 +9,6 @@ namespace Level.LevelInstantiations
 
         public override void CreateLevelElements()
         {
-            // Total 596
-            
             InstantiateEnemyNotes(4, new SecondString(), enemyNote2, 2);
             InstantiateEnemyNotes(4, new ForthString(), enemyNote2, 2);
             InstantiateEnemyNotes(4, new FirstString(), enemyNote2, 2);
