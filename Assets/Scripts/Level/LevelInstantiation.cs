@@ -145,6 +145,9 @@ namespace Enemy
                 case 8:
                     maxLevelScore += 8 * count;
                     break;
+                case 0:
+                    maxLevelScore += 0;
+                    break;
                 default:
                     throw new Exception("Such note type is not available yet");
             }

@@ -90,6 +90,10 @@ namespace Util
 			if (amount == 2) score+=amount / 2;
 			if (amount == 4) score+=amount / 2;
 
+			if (amount == -2) score+=amount / 2;
+			if (amount == -4) score+=amount / 2;
+			if (amount == -8) score+=amount / 2;
+			
 			// update UI
 			UIScore.text = "Score: " + score.ToString();
 		}
