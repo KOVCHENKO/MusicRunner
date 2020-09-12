@@ -14,162 +14,142 @@ namespace Level.LevelInstantiations
         {
             InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
             {
-                { new ThirdString(), enemyNote2 },
-                { new FifthString(), pause2 },
+                { new FirstString(), enemyNote2 },
+                { new ThirdString(), enemyNote4 },
             }, enemyNote2);
+            
+            CountPointsForInstantiation(2, 4);
 
             InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
             {
-                { new FirstString(), enemyNote2 },
-                { new ThirdString(), pause2 },
+                { new ThirdString(), enemyNote2 },
+                { new FifthString(), enemyNote4 },
             }, enemyNote2);
+            
+            CountPointsForInstantiation(2, 4);
+            
+            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FifthString(), enemyNote2 },
+                { new ThirdString(), enemyNote4 },
+            }, enemyNote2);
+
+            CountPointsForInstantiation(2, 4);
             
             InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
             {
                 { new SecondString(), enemyNote2 },
-                { new FirstString(), pause2 },
-                { new ThirdString(), pause2 },
+                { new ForthString(), enemyNote4 },
             }, enemyNote2);
-            
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
-            {
-                { new ThirdString(), enemyNote2 },
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
-                { new ForthString(), pause2 },
-            }, enemyNote2);
-            
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
-            {
-                { new ThirdString(), enemyNote2 },
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
-                { new ForthString(), pause2 },
-            }, enemyNote2);
-            
+
+            CountPointsForInstantiation(2, 4);
+
             InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
             {
                 { new ForthString(), enemyNote2 },
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
-                { new ThirdString(), pause2 },
-                { new FifthString(), pause2 },
+                { new SecondString(), enemyNote4 },
             }, enemyNote2);
+
+            CountPointsForInstantiation(2, 4);
             
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
             {
-                { new FirstString(), enemyNote2 },
-                { new SecondString(), pause2 },
-                { new ThirdString(), pause2 },
-                { new ForthString(),  pause2},
-                { new FifthString(), pause2 },
-            }, enemyNote2);
-            
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
-            {
-                { new FirstString(), pause2 },
+                { new FirstString(), enemyNote4 },
                 { new SecondString(), enemyNote2 },
-                { new ThirdString(), pause2 },
-                { new ForthString(),  pause2},
-                { new FifthString(), pause2 },
-            }, enemyNote2);
-            
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
-            {
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
-                { new ThirdString(), enemyNote2 },
-                { new ForthString(),  pause2},
-                { new FifthString(), pause2 },
-            }, enemyNote2);
-            
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
-            {
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
-                { new ThirdString(), pause2 },
+                { new ThirdString(), enemyNote4 },
                 { new ForthString(), enemyNote2 },
-                { new FifthString(), pause2 },
             }, enemyNote2);
             
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            CountPointsForInstantiation(4, 4);
+
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
             {
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
-                { new ThirdString(), pause2 },
-                { new ForthString(), pause2 },
+                { new FirstString(), enemyNote4 },
+                { new SecondString(), enemyNote2 },
+                { new ThirdString(), enemyNote4 },
+                { new ForthString(), enemyNote2 },
+            }, enemyNote2);
+            
+            CountPointsForInstantiation(4, 4);
+
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
+            {
+                { new SecondString(), enemyNote2 },
+                { new ThirdString(), enemyNote4 },
+                { new ForthString(), enemyNote2 },
+                { new FifthString(), enemyNote4 },
+            }, enemyNote2);
+            
+            CountPointsForInstantiation(4, 4);
+
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
+            {
+                { new SecondString(), enemyNote2 },
+                { new ThirdString(), enemyNote4 },
+                { new ForthString(), enemyNote2 },
                 { new FifthString(), enemyNote2 },
             }, enemyNote2);
             
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
-            {
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
-                { new ThirdString(), pause2 },
-                { new ForthString(), enemyNote2 },
-                { new FifthString(), pause2 },
-            }, enemyNote2);
+            CountPointsForInstantiation(4, 4);
 
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
             {
-                { new FirstString(), pause2 },
-                { new SecondString(), pause2 },
+                { new FirstString(), enemyNote4 },
                 { new ThirdString(), enemyNote2 },
-                { new ForthString(), pause2 },
-                { new FifthString(), pause2 },
+                { new ForthString(), enemyNote2 },
+                { new FifthString(), enemyNote2 },
             }, enemyNote2);
             
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            CountPointsForInstantiation(4, 4);
+
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
             {
-                { new FirstString(), pause2 },
                 { new SecondString(), enemyNote2 },
-                { new ThirdString(), pause2 },
-                { new ForthString(), pause2 },
-                { new FifthString(), pause2 },
+                { new ThirdString(), enemyNote2 },
+                { new ForthString(), enemyNote4 },
+                { new FifthString(), enemyNote2 },
             }, enemyNote2);
             
-            InstantiateEnemyNotesOnDifferentLines(2, new Dictionary<IMusicString, GameObject>()
+            CountPointsForInstantiation(4, 4);
+
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
             {
                 { new FirstString(), enemyNote2 },
-                { new SecondString(), pause2 },
-                { new ThirdString(), pause2 },
-                { new ForthString(), pause2 },
-                { new FifthString(), pause2 },
+                { new ThirdString(), enemyNote4 },
+                { new FifthString(), enemyNote2 },
             }, enemyNote2);
-            CountPointsForInstantiation(30, 2);
+            
+            CountPointsForInstantiation(4, 4);
 
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), enemyNote4 },
+                { new ThirdString(), enemyNote2 },
+                { new FifthString(), enemyNote4 },
+            }, enemyNote2);
             
-            IncreaseXPosition();
-            IncreaseXPosition();
-            //
-            // InstantiateEnemyNotes(4, new SecondString(), pause4);
-            // InstantiateEnemyNotes(4, new FirstString(), pause4);
-            //
-            // InstantiateEnemyNotes(4, new SecondString(), enemyNote4);
-            // InstantiateEnemyNotes(4, new FirstString(), enemyNote4);
-            // InstantiateEnemyNotes(4, new SecondString(), enemyNote4);
-            // InstantiateEnemyNotes(4, new FirstString(), enemyNote4);
-            // InstantiateEnemyNotes(4, new SecondString(), enemyNote4);
-            // InstantiateEnemyNotes(2, new FirstString(), enemyNote4);
-            //
-            IncreaseXPosition();
-            //
-            // InstantiateEnemyNotes(4, new ThirdString(), enemyNote8);
-            // InstantiateEnemyNotes(4, new ForthString(), enemyNote8);
-            // InstantiateEnemyNotes(4, new ThirdString(), enemyNote8);
-            // InstantiateEnemyNotes(4, new ForthString(), enemyNote8);
+            CountPointsForInstantiation(4, 4);
 
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), enemyNote4 },
+                { new ThirdString(), enemyNote2 },
+                { new FifthString(), enemyNote2 },
+            }, enemyNote2);
             
-            // Instantiate notes on several strings
-            // InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
-            // {
-            //     { new SecondString(), enemyNote4 },
-            //     { new ThirdString(), enemyNote4 },
-            //     { new FirstString(), pause4 },
-            //     { new FifthString(), pause4 },
-            // }, enemyNote4);
+            CountPointsForInstantiation(4, 4);
+
+            InstantiateEnemyNotesOnDifferentLines(4, new Dictionary<IMusicString, GameObject>()
+            {
+                { new FirstString(), enemyNote2 },
+                { new ThirdString(), enemyNote2 },
+                { new FifthString(), enemyNote4 },
+            }, enemyNote2);
             
-         
+            CountPointsForInstantiation(4, 4);
+
+            IncreaseXPosition();
+            IncreaseXPosition();
             // Finish
             InstantiateFinish();
         }
