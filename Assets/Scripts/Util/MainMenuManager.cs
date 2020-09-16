@@ -10,7 +10,7 @@ namespace Util
     {
         public Text UIScore;
         public Text DebuggerObj;
-        public int currentLevelBunch = 1;
+        public int currentLevelBunch;
         private Dictionary<int, GameObject> _levelBunches;
         public bool isForMainMenu = true;        
         
@@ -31,6 +31,12 @@ namespace Util
 
         void Awake()
         {
+            if (PlayerPrefs.GetInt("BunchNumber") == 0)
+            {
+                PlayerPrefs.SetInt("BunchNumber", 1);
+            }
+            currentLevelBunch = PlayerPrefs.GetInt("BunchNumber");
+            
             InitializeBunchOfLevels();
             mainMenuManager = this;
             
@@ -79,21 +85,22 @@ namespace Util
         {
             // FOR DEBUG PURPOSES
             // GameObject debuggerObj = GameObject.Find("DEBUG_TEXT");
-            DebuggerObj.text = "Loading level: " + levelToLoad;
+            if (DebuggerObj) DebuggerObj.text = "Loading level: " + levelToLoad;
             
             currentLevel = levelToLoad;
             
             if (IsLevelAvailable(levelToLoad))
             {
-                DebuggerObj.text = "Level available: " + levelToLoad;
-
+                if (DebuggerObj) DebuggerObj.text = "Level available: " + levelToLoad;
+                
+                SetEarnedScoreForLoadedLevel(levelToLoad);
                 PlayerPrefs.SetInt("l" + levelToLoad, 0);
                 PlayerPrefs.SetInt("CurrentLevel", levelToLoad);
                 SceneManager.LoadScene("Level1");
             }
             else
             {
-                DebuggerObj.text = "Level has not been passed yet: " + levelToLoad;
+                if (DebuggerObj) DebuggerObj.text = "Level has not been passed yet: " + levelToLoad;
                 Debug.Log("Level has not been passed yet");
             }
         }
@@ -124,12 +131,21 @@ namespace Util
                 case "forward":
                     Debug.Log("Going forward");
                     currentLevelBunch++;
+                    PlayerPrefs.SetInt("BunchNumber", currentLevelBunch);
                     break;
                 case "backward":
                     Debug.Log("Going backward");
                     currentLevelBunch--;
+                    PlayerPrefs.SetInt("BunchNumber", currentLevelBunch);
                     break;
             }
+        }
+
+        private void SetEarnedScoreForLoadedLevel(int levelToLoad)
+        {
+            PlayerPrefs.SetInt("EarnedScoreForLoadedLevel", 
+                PlayerPrefs.GetInt("l" + levelToLoad)
+            );
         }
     }
 }

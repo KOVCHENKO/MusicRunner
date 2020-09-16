@@ -48,6 +48,7 @@ namespace Level.Menu
 
         public void GoToMainMenu()
         {
+            GameManager.gm.LevelCompete(PlayerPrefs.GetInt("CurrentLevel"));
             SceneManager.LoadScene("Menu");
         }
         
