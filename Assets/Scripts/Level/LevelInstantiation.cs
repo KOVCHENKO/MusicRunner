@@ -39,7 +39,9 @@ namespace Enemy
 
         private void Start()
         {
-            int currentLevel = mainMenuManager.currentLevel;
+            int currentLevel = 0;
+            if (!isForCountPointsOnly)  currentLevel = mainMenuManager.currentLevel;
+            
             Debug.Log("Cur lev: " + currentLevel);
 
             LevelInstantiation levelStructure = null;

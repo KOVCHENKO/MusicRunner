@@ -44,21 +44,21 @@ namespace Level.LevelInstantiations
                 AddLevelMusic(3);
                 AddLevelMusic(4);
                 AddLevelMusic(5);
-                AddLevelMusic(3);
+                AddLevelMusic(6);
                 
-                AddLevelMusic(1);
-                AddLevelMusic(2);
-                AddLevelMusic(3);
-                AddLevelMusic(4);
-                AddLevelMusic(5);
-                AddLevelMusic(3);
+                AddLevelMusic(7);
+                AddLevelMusic(8);
+                AddLevelMusic(9);
+                AddLevelMusic(10);
+                AddLevelMusic(11);
+                AddLevelMusic(12);
                 
-                AddLevelMusic(1);
-                AddLevelMusic(2);
-                AddLevelMusic(3);
-                AddLevelMusic(4);
-                AddLevelMusic(5);
-                AddLevelMusic(3);
+                AddLevelMusic(13);
+                AddLevelMusic(14);
+                AddLevelMusic(15);
+                AddLevelMusic(16);
+                AddLevelMusic(17);
+                AddLevelMusic(18);
             }
         }
 
@@ -83,6 +83,9 @@ namespace Level.LevelInstantiations
                 
                 // Decrease by 10%
                 scoresRemainToLoad -= scoresRemainToLoad / 10;
+                // TODO: Setter for testing purposes
+                // scoresRemainToLoad = 0;
+                
                 Debug.Log("Score remain to load for level: " + key + " is: " + scoresRemainToLoad);
                 
                 NecessaryLevelScores.Add(key, scoresRemainToLoad);
@@ -111,7 +114,8 @@ namespace Level.LevelInstantiations
         {
             EarnedLevelScores = 0;
             
-            for (int i = 1; i <= 6; i++)
+            // TODO: Mechanism less or equal levels number
+            for (int i = 1; i <= 19; i++)
             {
                 Debug.Log("Level : " + 1 + ": " + PlayerPrefs.GetInt("l" + i));
                 EarnedLevelScores += PlayerPrefManager.GetScore(i);

@@ -9,9 +9,11 @@ namespace Util
     public class MainMenuManager : MonoBehaviour
     {
         public Text UIScore;
+        public Text DebuggerObj;
         public int currentLevelBunch = 1;
         private Dictionary<int, GameObject> _levelBunches;
-
+        public bool isForMainMenu = true;        
+        
         private GameObject _forward;
         private GameObject _backward;
 
@@ -40,8 +42,11 @@ namespace Util
 
         void Update()
         {
-            UpdateBunchOfLevels();
-            UpdateLevelBunchNavigationButtons();
+            if (isForMainMenu)
+            {
+                UpdateBunchOfLevels();
+                UpdateLevelBunchNavigationButtons();
+            }
         }
         
 
@@ -72,23 +77,30 @@ namespace Util
 
         public void LoadLevel(int levelToLoad)
         {
+            // FOR DEBUG PURPOSES
+            // GameObject debuggerObj = GameObject.Find("DEBUG_TEXT");
+            DebuggerObj.text = "Loading level: " + levelToLoad;
+            
             currentLevel = levelToLoad;
             
             if (IsLevelAvailable(levelToLoad))
             {
+                DebuggerObj.text = "Level available: " + levelToLoad;
+
                 PlayerPrefs.SetInt("l" + levelToLoad, 0);
                 PlayerPrefs.SetInt("CurrentLevel", levelToLoad);
                 SceneManager.LoadScene("Level1");
             }
             else
             {
+                DebuggerObj.text = "Level has not been passed yet: " + levelToLoad;
                 Debug.Log("Level has not been passed yet");
             }
         }
 
         private bool IsLevelAvailable(int levelToLoad)
         {
-            if (PlayerPrefs.GetInt("Score") >= LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
+            if (LevelsPreferences.GetEarnedLevelScores() >= LevelsPreferences.GetLevelScoresToLoad(levelToLoad))
             {
                 Debug.Log("Current min level: " + levelToLoad);
                 return true;
@@ -99,7 +111,10 @@ namespace Util
 
         private void SetTotalScoreUI()
         {
-            UIScore.text = "Total score: " + LevelsPreferences.GetEarnedLevelScores();
+            if (UIScore)
+            {
+                UIScore.text = "Total score: " + LevelsPreferences.GetEarnedLevelScores();
+            }
         }
 
         public void ChangeLevelsBunch(string direction)
