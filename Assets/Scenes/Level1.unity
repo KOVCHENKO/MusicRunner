@@ -1398,7 +1398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIScore: {fileID: 0}
+  DebuggerObj: {fileID: 0}
   currentLevelBunch: 1
+  isForMainMenu: 0
 --- !u!1 &1316680167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,7 +3238,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a50b18de16b807544b778033436c0fea,
+      objectReference: {fileID: 21300000, guid: fde9a28369ac5094199f4d66723ab5f0,
         type: 3}
     - target: {fileID: 3962689283957130184, guid: b250390dc3aee234ca94733bf495b96b,
         type: 3}
