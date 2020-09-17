@@ -43,6 +43,7 @@ namespace Level.Menu
 
         public void GoToLevel(int levelNumber)
         {
+            GameManager.gm.LevelCompete(PlayerPrefs.GetInt("CurrentLevel"));
             MainMenuManager.mainMenuManager.LoadLevel(PlayerPrefs.GetInt("CurrentLevel"));
         }
 
