@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d967fe5f71bc1ea4e988b9282b31290b,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -429,6 +432,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1247470493}
+        m_TargetAssemblyTypeName: 
         m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -454,6 +458,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -558,6 +563,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1247470493}
+        m_TargetAssemblyTypeName: 
         m_MethodName: GoToLevel
         m_Mode: 3
         m_Arguments:
@@ -583,6 +589,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -915,6 +922,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1110,6 +1118,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1423,7 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIScore: {fileID: 0}
   DebuggerObj: {fileID: 0}
-  currentLevelBunch: 1
+  currentLevelBunch: 0
   isForMainMenu: 0
 --- !u!1 &1316680167
 GameObject:
@@ -1656,7 +1665,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 800
+      value: -160
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -1676,7 +1685,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -1686,7 +1695,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -1862,7 +1871,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -750
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -1882,7 +1891,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -1892,7 +1901,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -2231,7 +2240,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 800
+      value: -160
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -2251,7 +2260,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -2261,7 +2270,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -2400,6 +2409,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1247470493}
+        m_TargetAssemblyTypeName: 
         m_MethodName: SwitchPauseMenu
         m_Mode: 1
         m_Arguments:
@@ -2425,6 +2435,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.12922843, b: 0.4245283, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2943,7 +2954,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -750
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -2963,7 +2974,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -2973,7 +2984,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -3105,6 +3116,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0.19607843, a: 0.5882353}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3237,7 +3249,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -750
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -3257,7 +3269,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
@@ -3267,7 +3279,7 @@ PrefabInstance:
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 392287212456201910, guid: 91b5cc9bf45144e4bb421e4dce89aca9,
         type: 3}
