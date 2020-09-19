@@ -1,6 +1,4 @@
-﻿using System;
-using Enemy;
-using Picker;
+﻿using Picker;
 using UnityEngine;
 using Util;
 
@@ -22,8 +20,7 @@ namespace Level
         {
             GameManager.gm.AudioSource.Stop();
             other.gameObject.GetComponent<PickerController>().FreezeMotion();
-            GameManager.gm.LevelCompete(PlayerPrefs.GetInt("CurrentLevel"));
-            
+            GameManager.gm.LevelCompete(PlayerPrefs.GetInt("CurrentLevel"), true);
         }
     }
 }

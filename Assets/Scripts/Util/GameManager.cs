@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Advertisements;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -20,6 +21,10 @@ namespace Util
 		GameObject _player;
 		Scene _scene;
 		
+		// Adds params
+		string gameId = "3826827";
+		private bool testMode = false;
+		
 		public AudioSource AudioSource
 		{
 			get;
@@ -33,6 +38,14 @@ namespace Util
 			setupDefaults();
 			
 			AudioSource = GetComponent<AudioSource>();
+		}
+
+		void Start()
+		{
+			// if (Advertisement.isSupported && !Advertisement.isInitialized) {
+			// 	Advertisement.Initialize(gameId, testMode);
+			// }
+			
 		}
 
 		void setupDefaults() {
@@ -73,7 +86,7 @@ namespace Util
 			UIScore.text = "Score: " + score.ToString();
 		}
 
-		public void LevelCompete(int levelNumber) {
+		public void LevelCompete(int levelNumber, bool includeAds = false) {
 			// Check whether to save new score or not
 			Debug.Log("Finishing score is: " + score);
 			
@@ -86,14 +99,32 @@ namespace Util
 				PlayerPrefManager.SavePlayerState(PlayerPrefs.GetInt("EarnedScoreForLoadedLevel"), levelNumber);
 			}
 			
-			StartCoroutine(LoadNextLevel());
+			StartCoroutine(LoadNextLevel(includeAds));
 		}
 
 		// load the nextLevel after delay
-		IEnumerator LoadNextLevel() {
+		IEnumerator LoadNextLevel(bool includeAds) {
 			yield return new WaitForSeconds(2.5f);
 			Debug.Log("Scene after victory: " + levelAfterVictory);
+			
+			if (includeAds)
+			{
+				// ShowAds();
+			}
+			
 			SceneManager.LoadScene(levelAfterVictory);
+		}
+		
+		private void ShowAds()
+		{
+			if (Advertisement.IsReady())
+			{
+				Advertisement.Show();
+			}
+			else
+			{
+				Debug.Log("Something wrong with ads processing. Try again later.");
+			}           
 		}
     }
 }
